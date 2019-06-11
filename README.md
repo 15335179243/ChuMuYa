@@ -21,5 +21,16 @@ dependencies {
         implementation 'com.github.15335179243:ChuMuYa:v11-1.0.0'
 }
 ```
-
+## usag
+//初始化你的动态权限(Initialize your dynamic permissions)
+                String[] str = {READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, INTERNET};
+                //调用本库方法(Call the library method)
+                DynamicPermissions dynamicPermissions = new DynamicPermissions(MainActivity.this, str);
+               //判断有没有权限,没有的话让他获取(Determine whether there is access, if not let him get)
+                if (!dynamicPermissions.isFlag()) {
+                    Log.d(TAG, "onOptionsItemSelected: " + "1");
+                    dynamicPermissions.init();
+                } else {
+                    Log.d(TAG, "onOptionsItemSelected: " + "1");
+                }
 
