@@ -22,6 +22,9 @@ dependencies {
 }
 ```
 ## usag
+## 
+
+```java
 //初始化你的动态权限(Initialize your dynamic permissions)
                 String[] str = {READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, INTERNET};
                 //调用本库方法(Call the library method)
@@ -33,4 +36,4 @@ dependencies {
                 } else {
                     Log.d(TAG, "onOptionsItemSelected: " + "1");
                 }
-
+```
