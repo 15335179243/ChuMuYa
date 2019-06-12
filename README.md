@@ -18,7 +18,8 @@ Step 2. Add the dependency
 
 ```java
 dependencies {
-        implementation 'com.github.15335179243:ChuMuYa:v11-1.0.0'
+	implementation 'pub.devrel:easypermissions:2.0.1'
+        implementation 'com.github.15335179243:ChuMuYa:v11-1.0.4'
 }
 ```
 ## usag
