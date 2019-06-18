@@ -5,7 +5,7 @@ import android.graphics.Color;
 import java.util.ArrayList;
 
 public class ChuMuRandomColor {
-    public static String onRandomColor(){
+    public static int onRandomColor(){
 
         ArrayList<String> list = new ArrayList<>();
         list.add("#EA8227");
@@ -18,6 +18,6 @@ public class ChuMuRandomColor {
         list.add("#AC25D2");
         list.add("#318FD7");
         list.add("#99D71F");
-     return    list.get((int) (1 + Math.random() * (10 - 1 + 1) - 1));
+     return Color.parseColor(list.get((int) (1 + Math.random() * (10 - 1 + 1) - 1)));
     }
 }
