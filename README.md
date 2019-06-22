@@ -35,6 +35,7 @@ dependencies {
                     dynamicPermissions.init();
                 } else {
                     Log.d(TAG, "onOptionsItemSelected: " + "1");
+		    //你想要进行的操作
                 }
 ```
 
@@ -159,4 +160,5 @@ TextView tv;
 tv.setsetTextColor(ChuMuRandomColor.onRandomCOlor());
 ```
 
+详情这边有csdn博客:https://blog.csdn.net/qq_44729989/article/details/93343258
 
