@@ -2,22 +2,24 @@ package com.chumu.dt.v24.permissions;
 
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
-import android.util.Log;
+
+
+import com.chumu.dt.v24.permissions.klog.ChuMuKLog;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import pub.devrel.easypermissions.EasyPermissions;
 import pub.devrel.easypermissions.PermissionRequest;
 
-public class DynamicPermissions implements EasyPermissions.PermissionCallbacks, EasyPermissions.RationaleCallbacks {
+public class ChuMuDynamicPermissions implements EasyPermissions.PermissionCallbacks, EasyPermissions.RationaleCallbacks {
     private int REQUEST_FILE_CODE = 99;
 
     private boolean flag = false;
     private Activity youActivity;
     String[] permissions;
 
-    public DynamicPermissions(Activity youActivity, String[] permissions) {
+    public ChuMuDynamicPermissions(Activity youActivity, String[] permissions) {
         this.youActivity = youActivity;
         this.permissions = permissions;
     }
@@ -60,7 +62,7 @@ public class DynamicPermissions implements EasyPermissions.PermissionCallbacks, 
     @Override
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
         flag = true;
-        Log.d(TAG, "onPermissionsGranted: 用户接受确认权限");
+        ChuMuKLog.d(TAG, "onPermissionsGranted: 用户接受确认权限");
 
     }
 
@@ -68,19 +70,19 @@ public class DynamicPermissions implements EasyPermissions.PermissionCallbacks, 
     public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
 
         flag = false;
-        Log.d(TAG, "onPermissionsDenied: 用户拒绝权限确认");
+        ChuMuKLog.d(TAG, "onPermissionsDenied: 用户拒绝权限确认");
     }
 
     @Override
     public void onRationaleAccepted(int requestCode) {
 
-        Log.d(TAG, "onRationaleAccepted: ");
+        ChuMuKLog.d(TAG, "onRationaleAccepted: ");
     }
 
     @Override
     public void onRationaleDenied(int requestCode) {
 
-        Log.d(TAG, "onRationaleDenied: ");
+        ChuMuKLog.d(TAG, "onRationaleDenied: ");
         //结束
     }
 }

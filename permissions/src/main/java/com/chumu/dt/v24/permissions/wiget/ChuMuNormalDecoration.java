@@ -7,10 +7,7 @@ import android.graphics.Rect;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.FontMetrics;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ItemDecoration;
-import android.support.v7.widget.RecyclerView.State;
-import android.util.Log;
+
 import android.util.SparseArray;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -23,12 +20,15 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.chumu.dt.v24.permissions.klog.ChuMuKLog;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class ChuMuNormalDecoration extends ItemDecoration {
-    protected String TAG = "ChuMu";
+import androidx.recyclerview.widget.RecyclerView;
+
+public abstract class ChuMuNormalDecoration extends RecyclerView.ItemDecoration {
+    protected String TAG = "chumu";
     private Paint mHeaderTxtPaint = new Paint(1);
     private Paint mHeaderContentPaint;
     protected int headerHeight = 136;
@@ -93,7 +93,7 @@ public abstract class ChuMuNormalDecoration extends ItemDecoration {
     }
 
     @SuppressLint("WrongConstant")
-    public void getItemOffsets(Rect outRect, View itemView, RecyclerView parent, State state) {
+    public void getItemOffsets(Rect outRect, View itemView, RecyclerView parent, RecyclerView.State state) {
         super.getItemOffsets(outRect, itemView, parent, state);
         if (this.mRecyclerView == null) {
             this.mRecyclerView = parent;
@@ -119,7 +119,7 @@ public abstract class ChuMuNormalDecoration extends ItemDecoration {
     public abstract String getHeaderName(int var1);
 
     @SuppressLint("WrongConstant")
-    public void onDrawOver(Canvas canvas, RecyclerView recyclerView, State state) {
+    public void onDrawOver(Canvas canvas, RecyclerView recyclerView, RecyclerView.State state) {
         super.onDrawOver(canvas, recyclerView, state);
         if (this.mRecyclerView == null) {
             this.mRecyclerView = recyclerView;
@@ -177,7 +177,7 @@ public abstract class ChuMuNormalDecoration extends ItemDecoration {
                     }
 
                     this.stickyHeaderPosArray.put(pos, viewTop);
-                    Log.i(this.TAG, "绘制各个头部" + pos);
+                    ChuMuKLog.i(this.TAG, "绘制各个头部" + pos);
                 }
             }
         }
@@ -204,7 +204,7 @@ public abstract class ChuMuNormalDecoration extends ItemDecoration {
             }
 
             canvas.restore();
-            Log.i(this.TAG, "绘制悬浮头部");
+            ChuMuKLog.i(this.TAG, "绘制悬浮头部");
         }
     }
 
@@ -218,12 +218,12 @@ public abstract class ChuMuNormalDecoration extends ItemDecoration {
 
     public void loadImage(final String url, final int pos, ImageView imageView) {
         if (this.getImg(url) != null) {
-            Log.i("qdx", "Glide 加载完图片" + pos);
+            ChuMuKLog.i("qdx", "Glide 加载完图片" + pos);
             imageView.setImageDrawable(this.getImg(url));
         } else {
             Glide.with(this.mRecyclerView.getContext()).load(url).into(new SimpleTarget<Drawable>() {
                 public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
-                    Log.i("qdx", "Glide回调" + pos);
+                    ChuMuKLog.i("qdx", "Glide回调" + pos);
                     ChuMuNormalDecoration.this.headViewMap.remove(pos);
                     ChuMuNormalDecoration.this.imgDrawableMap.put(url, resource);
                     ChuMuNormalDecoration.this.mRecyclerView.postInvalidate();
