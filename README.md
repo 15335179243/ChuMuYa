@@ -63,8 +63,6 @@ Step 2. Add the dependency
 
 
 dependencies {
-		//动态权限,不需要可以不用导入
-	implementation 'pub.devrel:easypermissions:2.0.1'
         implementation 'com.github.15335179243:ChuMuYa:v11-1.0.8'
 }
 ```
