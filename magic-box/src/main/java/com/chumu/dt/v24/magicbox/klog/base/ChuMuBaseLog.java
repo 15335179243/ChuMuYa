@@ -15,7 +15,7 @@ import android.util.Log;
 import com.chumu.dt.v24.magicbox.klog.ChuMuKLog;
 
 /**
- * Created by zhaokaiqiang on 15/11/18.
+ * Created by ChuMu on 15/11/18.
  */
 public class ChuMuBaseLog {
 

@@ -7,7 +7,9 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+* 可流动的布局
+* */
 public class ChuMuFlowLayout extends ViewGroup {
 
     private List<Line> mLines = new ArrayList<Line>(); // 用来记录描述有多少行View

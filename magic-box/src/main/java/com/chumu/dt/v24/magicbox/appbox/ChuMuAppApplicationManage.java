@@ -28,19 +28,21 @@ import java.util.regex.Pattern;
 
 /**
  * 主要功能:获取App应用版本信息
+ *
  * @Prject: CommonUtilLibrary
- * @Package: com.jingewenku.abrahamcaijin.commonutil
- * @author: AbrahamCaiJin
+ * @Package: com.chumu.dt.v24.magicbox.appbox
+ * @author: magic-box
  * @date: 2017年05月03日 16:37
  * @Copyright: 个人版权所有
  * @Company:
  * @version: 1.0.0
  */
 @SuppressWarnings("rawtypes")
-public class ChuMuAppApplicationMgr {
+public class ChuMuAppApplicationManage {
 
     /**
      * 获取本地apk的名称
+     *
      * @param context 上下文
      * @return String
      */
@@ -58,6 +60,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取本地Apk版本名称
+     *
      * @param context 上下文
      * @return String
      */
@@ -66,7 +69,7 @@ public class ChuMuAppApplicationMgr {
         try {
             verName = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
         } catch (NameNotFoundException e) {
-            ChuMuKLog.e("ChuMuAppApplicationMgr-->>getVerName()", e.getMessage() + "获取本地Apk版本名称失败！");
+            ChuMuKLog.e("ChuMuAppApplicationManage-->>getVerName()", e.getMessage() + "获取本地Apk版本名称失败！");
             e.printStackTrace();
         }
         return verName;
@@ -74,6 +77,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取本地Apk版本号
+     *
      * @param context 上下文
      * @return int
      */
@@ -82,7 +86,7 @@ public class ChuMuAppApplicationMgr {
         try {
             verCode = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
         } catch (NameNotFoundException e) {
-            ChuMuKLog.e("ChuMuAppApplicationMgr-->>getVerCode()", e.getMessage() + "获取本地Apk版本号失败！");
+            ChuMuKLog.e("ChuMuAppApplicationManage-->>getVerCode()", e.getMessage() + "获取本地Apk版本号失败！");
             e.printStackTrace();
         }
         return verCode;
@@ -90,6 +94,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 根据key获取xml中Meta的值
+     *
      * @param context 上下文
      * @param key
      * @return
@@ -99,11 +104,11 @@ public class ChuMuAppApplicationMgr {
 
         try {
             @SuppressLint("WrongConstant") ApplicationInfo e = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128);
-            if(null != e) {
+            if (null != e) {
                 Bundle metaData = e.metaData;
-                if(null != metaData) {
+                if (null != metaData) {
                     value = metaData.getString(key);
-                    if(null == value || value.length() == 0) {
+                    if (null == value || value.length() == 0) {
                         value = "";
                     }
                 }
@@ -117,6 +122,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取应用图标
+     *
      * @param context
      * @param packageName
      * @return
@@ -135,6 +141,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取应用第一次安装日期
+     *
      * @param context
      * @param packageName
      * @return
@@ -152,6 +159,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取应用更新日期
+     *
      * @param context
      * @param packageName
      * @return
@@ -169,6 +177,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取应用大小
+     *
      * @param context
      * @param packageName
      * @return
@@ -186,6 +195,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取应用apk文件
+     *
      * @param context
      * @param packageName
      * @return
@@ -203,6 +213,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取应用的安装市场
+     *
      * @param context
      * @param packageName
      * @return
@@ -213,6 +224,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取应用签名
+     *
      * @param context
      * @param packageName
      * @return
@@ -222,7 +234,7 @@ public class ChuMuAppApplicationMgr {
             PackageInfo pis = context.getPackageManager().getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
             return hexdigest(pis.signatures[0].toByteArray());
         } catch (NameNotFoundException e) {
-            throw new RuntimeException(ChuMuAppApplicationMgr.class.getName() + "the " + packageName + "'s application not found");
+            throw new RuntimeException(ChuMuAppApplicationManage.class.getName() + "the " + packageName + "'s application not found");
         }
     }
 
@@ -249,6 +261,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取应用兼容sdk
+     *
      * @param context
      * @param packageName
      * @return
@@ -266,6 +279,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取应用uid
+     *
      * @param context
      * @param packageName
      * @return
@@ -283,6 +297,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取Cpu内核数
+     *
      * @return
      */
     public static int getNumCores() {
@@ -305,6 +320,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获得root权限
+     *
      * @param context
      * @return
      */
@@ -337,6 +353,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获取应用的所有权限
+     *
      * @param context
      * @param packname
      * @return
@@ -354,6 +371,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 是否有权限
+     *
      * @param context
      * @param permission
      * @return
@@ -364,7 +382,7 @@ public class ChuMuAppApplicationMgr {
                 PackageManager packageManager = context.getPackageManager();
                 if (packageManager != null) {
                     if (PackageManager.PERMISSION_GRANTED == packageManager.checkPermission(permission, context
-                        .getPackageName())) {
+                            .getPackageName())) {
                         return true;
                     }
                     Log.d("ChuMuAppUtils", "Have you  declared permission " + permission + " in AndroidManifest.xml ?");
@@ -379,6 +397,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 应用是否安装
+     *
      * @param context
      * @param packageName
      * @return
@@ -402,6 +421,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 安装应用
+     *
      * @param context
      * @param filePath
      * @return
@@ -420,6 +440,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 卸载应用
+     *
      * @param context
      * @param packageName
      * @return
@@ -436,6 +457,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 是否是系统应用
+     *
      * @param context
      * @param packageName
      * @return
@@ -457,6 +479,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 服务是否在运行
+     *
      * @param context
      * @param className
      * @return
@@ -475,6 +498,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 停止服务
+     *
      * @param context
      * @param className
      * @return
@@ -495,10 +519,10 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 结束进程
+     *
      * @param context
      * @param pid
-     * @param processName
-     * 需要添加权限KILL_BACKGROUND_PROCESSES
+     * @param processName 需要添加权限KILL_BACKGROUND_PROCESSES
      */
     @SuppressLint("MissingPermission")
     public static void killProcesses(Context context, int pid, String processName) {
@@ -521,6 +545,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 运行脚本
+     *
      * @param script
      * @return
      */
@@ -532,8 +557,8 @@ public class ChuMuAppApplicationMgr {
             Thread tout = new Thread(new Runnable() {
                 public void run() {
                     BufferedReader bufferedReader = new BufferedReader(
-                        new InputStreamReader(m_process.getInputStream()),
-                        8192);
+                            new InputStreamReader(m_process.getInputStream()),
+                            8192);
                     String ls_1;
                     try {
                         while ((ls_1 = bufferedReader.readLine()) != null) {
@@ -556,8 +581,8 @@ public class ChuMuAppApplicationMgr {
             Thread terr = new Thread(new Runnable() {
                 public void run() {
                     BufferedReader bufferedReader = new BufferedReader(
-                        new InputStreamReader(m_process.getErrorStream()),
-                        8192);
+                            new InputStreamReader(m_process.getErrorStream()),
+                            8192);
                     String ls_1;
                     try {
                         while ((ls_1 = bufferedReader.readLine()) != null) {
@@ -594,6 +619,7 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 启动应用
+     *
      * @param context
      * @param packagename
      */
@@ -652,11 +678,12 @@ public class ChuMuAppApplicationMgr {
 
     /**
      * 获得应用申明的所有权限列表
+     *
      * @param context 上下文
      * @return 获得应用申明的所有权限列表
      */
-    public static List<String> getPermissions(Context context){
-        List<String> permissions=new ArrayList<String>();
+    public static List<String> getPermissions(Context context) {
+        List<String> permissions = new ArrayList<String>();
         try {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_PERMISSIONS);
             permissions.addAll(Arrays.asList(packageInfo.requestedPermissions));

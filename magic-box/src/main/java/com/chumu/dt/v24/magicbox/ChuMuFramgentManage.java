@@ -7,6 +7,9 @@ import java.util.List;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+/*** 一键式切换Framgent,自动管理生命周期
+ *
+ */
 
 public class ChuMuFramgentManage {
 

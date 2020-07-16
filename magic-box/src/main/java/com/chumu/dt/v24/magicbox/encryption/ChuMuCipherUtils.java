@@ -1,6 +1,6 @@
 package com.chumu.dt.v24.magicbox.encryption;
 
-import com.chumu.dt.v24.magicbox.appbox.ChuMuAppFileMgr;
+import com.chumu.dt.v24.magicbox.appbox.ChuMuAppFileManage;
 
 
 import java.io.File;
@@ -157,7 +157,7 @@ public class ChuMuCipherUtils {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            ChuMuAppFileMgr.closeIO(in);
+            ChuMuAppFileManage.closeIO(in);
         }
         return null;
     }

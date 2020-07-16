@@ -4,6 +4,9 @@ import android.graphics.Color;
 
 import java.util.Random;
 
+/**
+* 随机获取一款颜色值
+* */
 public class ChuMuRandomColor {
 
     private static String getRandColorCode() {

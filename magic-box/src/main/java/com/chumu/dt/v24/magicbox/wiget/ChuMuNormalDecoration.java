@@ -26,7 +26,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import androidx.recyclerview.widget.RecyclerView;
-
+/**
+ * 粘性头布局
+ *
+ * */
 public abstract class ChuMuNormalDecoration extends RecyclerView.ItemDecoration {
     protected String TAG = "chumu";
     private Paint mHeaderTxtPaint = new Paint(1);

@@ -21,7 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by zhaokaiqiang on 15/11/18.
+ * Created by ChuMu on 15/11/18.
  */
 public class JsonLog {
 

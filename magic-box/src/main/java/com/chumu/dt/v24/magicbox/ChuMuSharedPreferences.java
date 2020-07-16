@@ -1,4 +1,5 @@
 package com.chumu.dt.v24.magicbox;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,6 +10,7 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.widget.ImageView;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -19,6 +21,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
+
 public class ChuMuSharedPreferences {
 
 
@@ -70,12 +73,11 @@ public class ChuMuSharedPreferences {
     /**
      * 保存对象
      *
-     * @param context 上下文
      * @param key     键
      * @param obj     要保存的对象（Serializable的子类）
      * @param <T>     泛型定义
      */
-    public <T extends Serializable> void putObject(Context context, String key, T obj) {
+    public <T extends Serializable> void putObject(String key, T obj) {
         try {
             put(key, obj);
         } catch (Exception e) {
@@ -83,7 +85,7 @@ public class ChuMuSharedPreferences {
         }
     }
 
-    public <T extends Parcelable> void putObject2(Context context, String key, T obj) {
+    public <T extends Parcelable> void putObject2( String key, T obj) {
         try {
             put(key, obj);
         } catch (Exception e) {
@@ -94,12 +96,28 @@ public class ChuMuSharedPreferences {
     /**
      * 获取对象
      *
-     * @param context 上下文
+
      * @param key     键
      * @param <T>     指定泛型
      * @return 泛型对象
      */
-    public <T extends Serializable> T getObject(Context context, String key) {
+    public <T extends Serializable> T getObject( String key) {
+        try {
+            return (T) get(key);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+ /**
+     * 获取对象
+     *
+
+     * @param key     键
+     * @param <T>     指定泛型
+     * @return 泛型对象
+     */
+    public <T extends Parcelable> T getObject2( String key) {
         try {
             return (T) get(key);
         } catch (Exception e) {
@@ -108,7 +126,7 @@ public class ChuMuSharedPreferences {
         return null;
     }
 
-    public void putStringList(Context context, String key, List<String> list) {
+    public void putStringList( String key, List<String> list) {
         try {
             put(key, list);
         } catch (Exception e) {
@@ -116,7 +134,7 @@ public class ChuMuSharedPreferences {
         }
     }
 
-    public List<String> getStringList(Context context, String key) {
+    public List<String> getStringList( String key) {
         try {
             return (List<String>) get(key);
         } catch (Exception e) {
@@ -127,12 +145,9 @@ public class ChuMuSharedPreferences {
 
     /**
      * 存储List集合
-     *
-     * @param context 上下文
-     * @param key     存储的键
      * @param list    存储的集合
      */
-    public void putSerializableList(Context context, String key, List<? extends Serializable> list) {
+    public void putSerializableList( String key, List<? extends Serializable> list) {
         try {
             put(key, list);
         } catch (Exception e) {
@@ -143,12 +158,11 @@ public class ChuMuSharedPreferences {
     /**
      * 获取List集合
      *
-     * @param context 上下文
-     * @param key     键
-     * @param <E>     指定泛型
+     * @param key 键
+     * @param <E> 指定泛型
      * @return List集合
      */
-    public <E extends Serializable> List<E> getSerializableList(Context context, String key) {
+    public <E extends Serializable> List<E> getSerializableList(String key) {
         try {
             return (List<E>) get(key);
         } catch (Exception e) {
@@ -157,18 +171,44 @@ public class ChuMuSharedPreferences {
         return null;
     }
 
+    /**
+     * 存储List集合
+     * @param list    存储的集合
+     */
+    public void putParcelableList( String key, List<? extends Parcelable> list) {
+        try {
+            put(key, list);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 获取List集合
+     *
+     * @param key 键
+     * @param <E> 指定泛型
+     * @return List集合
+     */
+    public <E extends Parcelable> List<E> getParcelableList(String key) {
+        try {
+            return (List<E>) get(key);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     /**
      * 存储Map集合
      *
-     * @param context 上下文
-     * @param key     键
-     * @param map     存储的集合
-     * @param <K>     指定Map的键
-     * @param <V>     指定Map的值
+     * @param key 键
+     * @param map 存储的集合
+     * @param <K> 指定Map的键
+     * @param <V> 指定Map的值
      */
-    public <K extends Serializable, V extends Serializable> void putMap(Context context,
-                                                                        String key, Map<K, V> map) {
+    public <K extends Serializable, V extends Serializable> void putMap(
+            String key, Map<K, V> map) {
         try {
             put(key, map);
         } catch (Exception e) {
@@ -176,13 +216,14 @@ public class ChuMuSharedPreferences {
         }
     }
 
-    public <K extends Serializable, V extends Serializable> Map<K, V> getMap(Context context,
-                                                                             String key) {
+    public <K extends Serializable, V extends Serializable> Map<K, V> getMap(
+            String key) {
         try {
             return (Map<K, V>) get(key);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         return null;
     }
 
@@ -269,7 +310,7 @@ public class ChuMuSharedPreferences {
     /**
      * 查询某个key是否已经存在
      */
-    public boolean contains(Context context, String key) {
+    public boolean contains(String key) {
 
         return sharedPreferences.contains(key);
     }
@@ -277,7 +318,7 @@ public class ChuMuSharedPreferences {
     /**
      * 返回所有的键值对
      */
-    public Map<String, ?> getAll(Context context) {
+    public Map<String, ?> getAll() {
 
         return sharedPreferences.getAll();
     }
@@ -286,10 +327,10 @@ public class ChuMuSharedPreferences {
     /**
      * 保存图片到SharedPreferences
      *
-     * @param mContext
+
      * @param imageView
      */
-    public void putImage(Context mContext, String key, ImageView imageView) {
+    public void putImage(String key, ImageView imageView) {
         BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
         Bitmap bitmap = drawable.getBitmap();
         // 将Bitmap压缩成字节数组输出流
@@ -305,10 +346,8 @@ public class ChuMuSharedPreferences {
     /**
      * 从SharedPreferences读取图片
      *
-     * @param mContext
-     * @param imageView
      */
-    public Bitmap getImage(Context mContext, String key, ImageView imageView) {
+    public Bitmap getImage( String key) {
         String imgString = (String) getValue(key, "");
         if (!imgString.equals("")) {
             // 利用Base64将我们string转换

@@ -2,8 +2,8 @@ package com.chumu.dt.v24.magicbox.appbox;
 
 
 import com.chumu.dt.v24.magicbox.klog.ChuMuKLog;
-
 /**
+
  * 主要功能： 系统日志输出工具类
  * @Prject: ChuMuYa
  * @date: 2017年05月04日 14:13
@@ -11,7 +11,7 @@ import com.chumu.dt.v24.magicbox.klog.ChuMuKLog;
  * @Company:
  * @version: 1.0.0
  */
-public class ChuMuAppLogMessageMgr {
+public class ChuMuAppLogMessageManage {
     //是否输出
     private static boolean isDebug = true;
 
@@ -19,7 +19,7 @@ public class ChuMuAppLogMessageMgr {
      * 设置debug模式(true:打印日志  false：不打印)
      */
     public static void isEnableDebug(boolean isDebug){
-        ChuMuAppLogMessageMgr.isDebug = isDebug;
+        ChuMuAppLogMessageManage.isDebug = isDebug;
     }
     
     /**

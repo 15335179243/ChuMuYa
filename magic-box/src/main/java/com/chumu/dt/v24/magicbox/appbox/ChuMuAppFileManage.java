@@ -35,14 +35,14 @@ import Decoder.BASE64Encoder;
  * 主要功能：App应用文件管理工具类
  *
  * @Prject: chuMuYa
- * @author: AbrahamCaiJin
+ * @author: magic-box
  * @date: 2017年05月04日 14:13
  * @Copyright: 个人版权所有
  * @Company:
  * @version: 1.0.0
  */
 @SuppressWarnings("resource")
-public class ChuMuAppFileMgr {
+public class ChuMuAppFileManage {
 
 	
 	//得到当前外部存储设备的目录
@@ -90,9 +90,9 @@ public class ChuMuAppFileMgr {
             		deleteFilesByDirectory(file);
             		file.delete();
             }
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>deleteFilesByDirectory", "This directory is not file, execute delete");
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>deleteFilesByDirectory", "This directory is not file, execute delete");
         }else{
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>deleteFilesByDirectory", "This directory is file, not execute delete");
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>deleteFilesByDirectory", "This directory is file, not execute delete");
         }
     }
 	
@@ -114,7 +114,7 @@ public class ChuMuAppFileMgr {
  	            }
  	        }
     	}
-		ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getFileSize", "This file size: " + size);
+		ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getFileSize", "This file size: " + size);
         return size;
     }
     
@@ -143,15 +143,15 @@ public class ChuMuAppFileMgr {
 				outputStream.write(array);
 				outputStream.flush();
 				outputStream.close();
-				ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>saveFileToSdcard-->>bitmap:", bitmap.toString());
-				ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>saveFileToSdcard-->>path:", path);
-				ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>saveFileToSdcard:", "将File写入到指定路径下成功！");
+				ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>saveFileToSdcard-->>bitmap:", bitmap.toString());
+				ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>saveFileToSdcard-->>path:", path);
+				ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>saveFileToSdcard:", "将File写入到指定路径下成功！");
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
-				ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>saveFileToSdcard:", "将File写入到指定路径下失败！" + e.getMessage());
+				ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>saveFileToSdcard:", "将File写入到指定路径下失败！" + e.getMessage());
 			} catch (IOException e1) {
 				e1.printStackTrace();
-				ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>saveFileToSdcard:", "将File写入到指定路径下失败！" + e1.getMessage());
+				ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>saveFileToSdcard:", "将File写入到指定路径下失败！" + e1.getMessage());
 			}
 		}
 	}
@@ -199,10 +199,10 @@ public class ChuMuAppFileMgr {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>getCacheFile:","获取Sdcard指定目录下缓存文件失败！" + e.getMessage());
+			ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>getCacheFile:","获取Sdcard指定目录下缓存文件失败！" + e.getMessage());
 		}
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getCacheFile-->>imageUri:", imageUri);
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getCacheFile:", "获取Sdcard指定目录下缓存文件成功！");
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getCacheFile-->>imageUri:", imageUri);
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getCacheFile:", "获取Sdcard指定目录下缓存文件成功！");
 			return cacheFile;
 	}
 
@@ -213,7 +213,7 @@ public class ChuMuAppFileMgr {
 	 */
 	public static String getFileName(String path) {
 		int index = path.lastIndexOf("/");
-		ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getFileName-->>path:", path);
+		ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getFileName-->>path:", path);
 		return path.substring(index + 1);
 	}
 
@@ -228,8 +228,8 @@ public class ChuMuAppFileMgr {
 		//判断SDCard是否存在并且可以读写
 		String sdCardFlag = Environment.getExternalStorageState();
 		if (sdCardFlag != null && sdCardFlag.equals(Environment.MEDIA_MOUNTED)) {
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>writeFileToSdCard-->>fileContent:",fileContent);
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>writeFileToSdCard-->>fileName:",fileName);
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>writeFileToSdCard-->>fileContent:",fileContent);
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>writeFileToSdCard-->>fileName:",fileName);
 			File file = new File(CACHE_DIRECTORY + fileName);
 			if (!file.getParentFile().exists()) {
 				file.getParentFile().mkdirs();
@@ -255,10 +255,10 @@ public class ChuMuAppFileMgr {
 				input.close();
 			} catch (IOException e) {
 				e.printStackTrace();
-				ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>writeFileToSdCard:","把内容写在SdCard卡上指定目录失败！" + e.getMessage());
+				ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>writeFileToSdCard:","把内容写在SdCard卡上指定目录失败！" + e.getMessage());
 			}
 		} else {
-				ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>writeFileToSdCard:","该SdCard不存在或不永许读写操作,写入失败！");
+				ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>writeFileToSdCard:","该SdCard不存在或不永许读写操作,写入失败！");
 		}
 	}
 
@@ -273,9 +273,9 @@ public class ChuMuAppFileMgr {
 		File file = null;
 		OutputStream output = null;
 		try {
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>writeInputStreamToSdCard-->>path:",path);
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>writeInputStreamToSdCard-->>fileName:",fileName);
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>writeInputStreamToSdCard-->>inputStream:",inputStream + "");
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>writeInputStreamToSdCard-->>path:",path);
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>writeInputStreamToSdCard-->>fileName:",fileName);
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>writeInputStreamToSdCard-->>inputStream:",inputStream + "");
 			//创建目录和文件
 			file = createSDFile( path + fileName);
 			//创建输出流 
@@ -288,16 +288,16 @@ public class ChuMuAppFileMgr {
 			output.flush();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>writeInputStreamToSdCard:","将InputStream写入SdCard指定目录下失败！" + e.getMessage());
+			ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>writeInputStreamToSdCard:","将InputStream写入SdCard指定目录下失败！" + e.getMessage());
 		} catch (IOException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>writeInputStreamToSdCard:","将InputStream写入SdCard指定目录下失败！" + e.getMessage());
+			ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>writeInputStreamToSdCard:","将InputStream写入SdCard指定目录下失败！" + e.getMessage());
 		}finally{
 			try {
 				output.close();
 			} catch (IOException e) {
 				e.printStackTrace();
-				ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>writeInputStreamToSdCard:","将InputStream写入SdCard指定目录下失败！" + e.getMessage());
+				ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>writeInputStreamToSdCard:","将InputStream写入SdCard指定目录下失败！" + e.getMessage());
 			}
 		}
 		return file;
@@ -322,10 +322,10 @@ public class ChuMuAppFileMgr {
 			br.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>readFileFromSdCard:","从SdCard中读取文件内容失败！" + e.getMessage());
+			ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>readFileFromSdCard:","从SdCard中读取文件内容失败！" + e.getMessage());
 		}
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>readFileFromSdCard-->>cacheFileName:",cacheFileName);
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>readFileFromSdCard:","从SdCard中读取文件内容成功！");
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>readFileFromSdCard-->>cacheFileName:",cacheFileName);
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>readFileFromSdCard:","从SdCard中读取文件内容成功！");
 			return fileContentStr;
 	}
 
@@ -340,8 +340,8 @@ public class ChuMuAppFileMgr {
 		//SdCard已存在
 		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
 			file = Environment.getExternalStorageDirectory().getPath() + path;
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getRootFilePath","SdCard已存在, 在SdCard中创建文件夹！");
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getRootFilePath-->>file", "创建文件夹路径为" + file);
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getRootFilePath","SdCard已存在, 在SdCard中创建文件夹！");
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getRootFilePath-->>file", "创建文件夹路径为" + file);
 			File files = new File(file);
 			if (files == null || !files.exists()) {
 				files.mkdir();
@@ -351,8 +351,8 @@ public class ChuMuAppFileMgr {
 		//SdCard卡不存在
 		else {
 			file = Environment.getRootDirectory().getPath() + path;
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getRootFilePath","SdCard卡不存在, 在手机中创建文件夹！");
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getRootFilePath-->>file:","创建文件夹的路径为" + file);
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getRootFilePath","SdCard卡不存在, 在手机中创建文件夹！");
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getRootFilePath-->>file:","创建文件夹的路径为" + file);
 			File files = new File(file);
 			if (files == null || !files.exists()) {
 				files.mkdir();
@@ -517,7 +517,7 @@ public class ChuMuAppFileMgr {
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
-				ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>createSDFile:","创建文件失败！" + e.getMessage());
+				ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>createSDFile:","创建文件失败！" + e.getMessage());
 			}
 				return file;
 	}
@@ -637,10 +637,10 @@ public class ChuMuAppFileMgr {
 			inputStream = urlConnection.getInputStream();
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>getInputStreamByStringURL:","根据地址获取InputStream失败！" + e.getMessage());
+			ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>getInputStreamByStringURL:","根据地址获取InputStream失败！" + e.getMessage());
 		} catch (IOException e){
 			e.printStackTrace();
-			ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>getInputStreamByStringURL:","根据地址获取InputStream失败！" + e.getMessage());
+			ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>getInputStreamByStringURL:","根据地址获取InputStream失败！" + e.getMessage());
 		}
 		 	return inputStream;
 	}
@@ -660,13 +660,13 @@ public class ChuMuAppFileMgr {
 		    inputFile.read(buffer);
 		    inputFile.close();
 		    strings = new BASE64Encoder().encode(buffer);
-		    ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getEncodeBase64File", "文件转换base64字符串成功！"  + strings);
+		    ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getEncodeBase64File", "文件转换base64字符串成功！"  + strings);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>getEncodeBase64File", "文件转换base64字符串失败！"  + e.getMessage());
+			ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>getEncodeBase64File", "文件转换base64字符串失败！"  + e.getMessage());
 		} catch(IOException e){
 			e.printStackTrace();
-			ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>getEncodeBase64File", "文件转换base64字符串失败！"  + e.getMessage());
+			ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>getEncodeBase64File", "文件转换base64字符串失败！"  + e.getMessage());
 		}
 			return strings;
     }
@@ -685,10 +685,10 @@ public class ChuMuAppFileMgr {
 	        FileOutputStream out = new FileOutputStream(targetPath);
 	        out.write(buffer);
 	        out.close();
-	        ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getDecoderBase64File", "base64字符解码保存文件成功！");
+	        ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getDecoderBase64File", "base64字符解码保存文件成功！");
 		} catch (IOException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>getDecoderBase64File", "base64字符解码保存文件失败！" + e.getMessage());
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>getDecoderBase64File", "base64字符解码保存文件失败！" + e.getMessage());
 		}
     }
     
@@ -744,7 +744,7 @@ public class ChuMuAppFileMgr {
 		} catch (Exception e) {
 				CUT_FALG = false;
 				e.printStackTrace();
-				ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>cutFile:","文件剪切操作出现异常！" + e.getMessage());
+				ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>cutFile:","文件剪切操作出现异常！" + e.getMessage());
 		}	
 				return CUT_FALG;
 	}
@@ -853,7 +853,7 @@ public class ChuMuAppFileMgr {
 				} catch (Exception e) {
 					  COPY_FALG = false;
 					  e.printStackTrace();
-					  ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>copyFile:","文件复制操作出现异常！" + e.getMessage());
+					  ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>copyFile:","文件复制操作出现异常！" + e.getMessage());
 				}finally{
 						try {
 							if(bis != null){ 	
@@ -865,7 +865,7 @@ public class ChuMuAppFileMgr {
 						} catch (IOException e) {
 							COPY_FALG = false;
 							e.printStackTrace();
-							ChuMuAppLogMessageMgr.e("ChuMuAppFileMgr-->>copyFile:", "文件复制操作，数据流关闭出现异常！" + e.getMessage());
+							ChuMuAppLogMessageManage.e("ChuMuAppFileManage-->>copyFile:", "文件复制操作，数据流关闭出现异常！" + e.getMessage());
 						}
 				}
 			}else if(src.isDirectory()){
@@ -894,7 +894,7 @@ public class ChuMuAppFileMgr {
 		if(!path.endsWith(File.separator)){
 			path += File.separator;
 		}
-		ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>renameFile:", "文件重命名操作成功！");
+		ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>renameFile:", "文件重命名操作成功！");
 		return file.renameTo(new File(path + name));
 	}
 	
@@ -925,7 +925,7 @@ public class ChuMuAppFileMgr {
 		} catch (Exception e) {
 			DELETE_FALG = false;
 			e.printStackTrace();
-			ChuMuAppLogMessageMgr.i("ChuMuAppFileMgr-->>deleteFile", "文件删除出现异常！" + e.getMessage());
+			ChuMuAppLogMessageManage.i("ChuMuAppFileManage-->>deleteFile", "文件删除出现异常！" + e.getMessage());
 		}
 			return DELETE_FALG;
 	}

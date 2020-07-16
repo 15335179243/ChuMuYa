@@ -32,7 +32,6 @@ import androidx.annotation.Nullable;
  * <li>use ChuMuKChuMuKLog.json(),you could print json string with well format automatic</li>
  * </ol>
  *
- * @author zhaokaiqiang
  *         github https://github.com/ZhaoKaiQiang/KChuMuKLog
  *         15/11/17 扩展功能，添加对文件的支持
  *         15/11/18 扩展功能，增加对XML的支持，修复BUG

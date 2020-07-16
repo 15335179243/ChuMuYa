@@ -28,7 +28,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
- * Created by zhaokaiqiang on 15/11/18.
+ * Created by ChuMu on 15/11/18.
  */
 public class FileLog {
 
