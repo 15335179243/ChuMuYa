@@ -1,6 +1,6 @@
 # DialogFragment内存泄漏解决方案
 
-![](C:\Users\ASUS\Desktop\ssw\172542-bf69455807784805.webp)
+![](https://upload-images.jianshu.io/upload_images/172542-bf69455807784805.png?imageMogr2/auto-orient/strip|imageView2/2/w/273/format/webp)
 
 ​									**内存泄漏引用链**
 

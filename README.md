@@ -161,5 +161,7 @@ tv.setsetTextColor(ChuMuRandomColor.onRandomCOlor());
 ## 工具百宝箱(找到你想要的) → [点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/AppBox.md)
 
 #####
+# v11-2.0.1更新
+
 
 ## ChuMuDialogFragment(对官方DialogFragment内存泄漏问题进行解决) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/basedialogframgent/BaseDialogFragment.md)
