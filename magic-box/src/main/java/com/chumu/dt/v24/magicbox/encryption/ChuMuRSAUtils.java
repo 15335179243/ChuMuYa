@@ -23,11 +23,11 @@ import javax.crypto.Cipher;
 
 /**
  * @Description:主要功能:RSA加密解密工具类,android平台上RSA加密算法用的默认Provider是“org.bouncycastle.jce.provider.BouncyCastleProvider”
- * @Prject: ChuMuYa
+ * @Prject: magic-box
  * @date: 2017年07月20日 16:26
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 
 public class ChuMuRSAUtils {

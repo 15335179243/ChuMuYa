@@ -2,11 +2,11 @@ package com.chumu.dt.v24.magicbox.klog.base;
 
 /**
  * @Description:主要功能:
- * @Prject: ChuMuYa
+ * @Prject: magic-box
  * @date: 2017年05月16日 16:56
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 
 

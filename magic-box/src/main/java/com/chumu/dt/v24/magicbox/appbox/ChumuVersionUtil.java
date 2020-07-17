@@ -4,11 +4,11 @@ import android.os.Build;
 
 /**
  * @Description:主要功能:andoid 版本工具，用于判断当前版本是否大于某个版本
- * @Prject: ChuMuYa
+ * @Prject: magic-box
  * @date: 2019年07月20日 10:33
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 
 public class ChumuVersionUtil {
@@ -104,18 +104,20 @@ public class ChumuVersionUtil {
 
     /**
      * 是否在6.0版本及以上
+     *
      * @return 是否在6.0版本及以上
      */
-    public static boolean isM(){
-        return Build.VERSION.SDK_INT >=  Build.VERSION_CODES.M;
+    public static boolean isM() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
     }
 
     /**
      * 是否在7.0版本及以上
+     *
      * @return 是否在7.0版本及以上
      */
-    public static boolean is(){
-        return  Build.VERSION.SDK_INT >=  Build.VERSION_CODES.N;
+    public static boolean is() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.N;
     }
 
     /**
@@ -126,6 +128,7 @@ public class ChumuVersionUtil {
     public static boolean isN1() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1;
     }
+
     /**
      * 是否在8.0版本及以上
      *
@@ -134,6 +137,7 @@ public class ChumuVersionUtil {
     public static boolean isO() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
     }
+
     /**
      * 是否在8.1版本及以上
      *
@@ -142,6 +146,7 @@ public class ChumuVersionUtil {
     public static boolean isO1() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1;
     }
+
     /**
      * 是否在9.0版本及以上
      *
@@ -149,5 +154,13 @@ public class ChumuVersionUtil {
      */
     public static boolean isP() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.P;
+    }
+    /**
+     * 是否在10.0版本及以上
+     *
+     * @return 是否在7.0版本及以上
+     */
+    public static boolean isQ() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q;
     }
 }

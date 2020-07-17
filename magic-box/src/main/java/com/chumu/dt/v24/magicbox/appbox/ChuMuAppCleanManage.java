@@ -12,11 +12,11 @@ import java.text.DecimalFormat;
 /**
  * 主要功能： 提供App数据清理工作的类
  *
- * @Prject: ChuMuYa
+ * @Prject: magic-box
  * @date: 2019年05月03日 16:37
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 @SuppressLint("SdCardPath")
 public class ChuMuAppCleanManage {

@@ -22,7 +22,7 @@ Step 2. Add the dependency
 ```java
 dependencies {
 
-        implementation 'com.github.15335179243:ChuMuYa:v11-2.0.0-beta'
+        implementation 'com.github.15335179243:ChuMuYa:v11-2.0.1-beta'
 }
 ```
 
@@ -32,17 +32,13 @@ dependencies {
 
 ```java
 //初始化你的动态权限(Initialize your dynamic permissions)
-                String[] str = {READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, INTERNET};
-                //调用本库方法(Call the library method)
-                ChuMuDynamicPermissions dynamicPermissions = new  ChuMuDynamicPermissions(MainActivity.this, str);
-               //判断有没有权限,没有的话让他获取(Determine whether there is access, if not let him get)
-                if (!dynamicPermissions.isFlag()) {
-                    Log.d(TAG, "onOptionsItemSelected: " + "1");
-                    dynamicPermissions.init();
-                } else {
-                    Log.d(TAG, "onOptionsItemSelected: " + "1");
-		    //你想要进行的操作
-                }
+        String[] str = {READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, INTERNET,ACCESS_WIFI_STATE,MOUNT_FORMAT_FILESYSTEMS};
+        //调用本库方法(Call the library method)
+        if (ChuMuDynamicPermissions.getInstance().setPermissions(this,str)) {
+            //权限申请成功
+        }else {
+            //权限被拒绝
+        }
 ```
 
 ### v11-1.0.4更新
@@ -164,5 +160,6 @@ tv.setsetTextColor(ChuMuRandomColor.onRandomCOlor());
 
 ## 工具百宝箱(找到你想要的) → [点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/AppBox.md)
 
+#####
 
-
+## ChuMuDialogFragment(对官方DialogFragment内存泄漏问题进行解决) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/basedialogframgent/BaseDialogFragment.md)

@@ -22,11 +22,11 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
  * 主要功能:缓存工具类
  *
- * @Prject: ChuMuYa
+ * @Prject: magic-box
  * @date: 2017年05月03日 16:34
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 public class ChuMuAppACache {
 

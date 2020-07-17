@@ -5,11 +5,11 @@ import com.chumu.dt.v24.magicbox.klog.ChuMuKLog;
 /**
 
  * 主要功能： 系统日志输出工具类
- * @Prject: ChuMuYa
+ * @Prject: magic-box
  * @date: 2017年05月04日 14:13
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 public class ChuMuAppLogMessageManage {
     //是否输出

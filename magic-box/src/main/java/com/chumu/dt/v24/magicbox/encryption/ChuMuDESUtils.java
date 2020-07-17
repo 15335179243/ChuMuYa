@@ -7,11 +7,11 @@ import javax.crypto.spec.SecretKeySpec;
 
 /**
  * @Description:主要功能:DES对称加密（Data Encryption Standard，数据加密标准，对称加密算法）
- * @Prject: ChuMuYa
+ * @Prject: magic-box
  * @date: 2017年05月16日 15:56
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 
 public class ChuMuDESUtils {

@@ -13,11 +13,11 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * @Description:主要功能:加密工具类
- * @Prject: ChuMuYa
+ * @Prject: magic-box
  * @date: 2017年06月02日 10:05
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 
 public class ChuMuCipherUtils {

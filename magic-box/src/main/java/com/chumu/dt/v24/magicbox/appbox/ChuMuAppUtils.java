@@ -5,11 +5,11 @@ import android.content.Context;
 
 /**
  * @Description:主要功能:初始化在application中获取context
- * @Package ChuMuYa
+ *  @Prject: magic-box
  * @date: 2017年05月19日 14:09
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 
 public class ChuMuAppUtils {
@@ -27,6 +27,7 @@ public class ChuMuAppUtils {
      */
     public static void init(Context context) {
         ChuMuAppUtils.context = context.getApplicationContext();
+        ChuMuDisplayUtils.init(context);
     }
 
     /**

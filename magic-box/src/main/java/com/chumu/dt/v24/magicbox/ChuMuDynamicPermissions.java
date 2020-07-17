@@ -22,17 +22,27 @@ public class ChuMuDynamicPermissions implements EasyPermissions.PermissionCallba
     private boolean flag = false;
     private Activity youActivity;
     String[] permissions;
+    private static ChuMuDynamicPermissions mChuMuDynamicPermissions;
 
-    public ChuMuDynamicPermissions(Activity youActivity, String[] permissions) {
+    public static ChuMuDynamicPermissions getInstance() {
+        if (mChuMuDynamicPermissions==null) {
+            mChuMuDynamicPermissions = new ChuMuDynamicPermissions();
+        }
+        return mChuMuDynamicPermissions;
+    }
+
+    public boolean setPermissions(Activity youActivity, String[] permissions) {
         this.youActivity = youActivity;
         this.permissions = permissions;
+        init();
+        return isFlag();
     }
 
     public boolean isFlag() {
         return flag;
     }
 
-    public void init() {
+    private void init() {
         if (EasyPermissions.hasPermissions(youActivity, permissions)) {
             flag = true;
 

@@ -34,12 +34,12 @@ import Decoder.BASE64Encoder;
 /**
  * 主要功能：App应用文件管理工具类
  *
- * @Prject: chuMuYa
- * @author: magic-box
+ * @Prject: magic-box
+ * @author: ChuMuYa
  * @date: 2017年05月04日 14:13
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 @SuppressWarnings("resource")
 public class ChuMuAppFileManage {

@@ -9,11 +9,11 @@ import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 /**
  * @Description:主要功能: 实现的Zip工具
- * @Package ChuMuYa
+ *  @Prject: magic-box
  * @date: 2017年05月24日 18:21
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 
 public class ChuMuZipUtil {

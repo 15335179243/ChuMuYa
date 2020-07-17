@@ -29,13 +29,13 @@ import java.util.regex.Pattern;
 /**
  * 主要功能:获取App应用版本信息
  *
- * @Prject: CommonUtilLibrary
+ * @Prject: magic-box
  * @Package: com.chumu.dt.v24.magicbox.appbox
- * @author: magic-box
+ * @author: ChuMuYa
  * @date: 2017年05月03日 16:37
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 1.0.0
+ @version: 2.0.1-beta
  */
 @SuppressWarnings("rawtypes")
 public class ChuMuAppApplicationManage {
