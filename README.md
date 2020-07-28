@@ -3,7 +3,7 @@
 This is Chumu's code base. Welcome to this place. It's a great honor to serve you. What suggestions can you leave a message or add QQ: 1970874029 for communication.
 
 
-​                                                          [![](https://img.shields.io/badge/CSDN-%E6%A5%9A%E6%9C%A8-green)](https://editor.csdn.net/md/?articleId=93377026)        [![](https://img.shields.io/badge/jitpack-2.0.1--beta-orange)](https://github.com/15335179243/ChuMuYa/releases/tag/v11-2.0.1-beta)
+​                                                          [![](https://img.shields.io/badge/CSDN-%E6%A5%9A%E6%9C%A8-green)](https://blog.csdn.net/qq_44729989)        [![](https://img.shields.io/badge/jitpack-2.0.1--beta-orange)](https://github.com/15335179243/ChuMuYa/releases/tag/v11-2.0.1-beta)
 
 Add it in your root build.gradle at the end of repositories:
 
