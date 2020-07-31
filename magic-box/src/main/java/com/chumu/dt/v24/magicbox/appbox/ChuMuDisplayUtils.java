@@ -4,15 +4,22 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.ViewConfiguration;
+import android.view.Window;
 import android.view.WindowManager;
+
+import java.lang.reflect.Method;
+
 /**
  * 主要功能： 手机常用单位转换的辅助类及屏显示相关
  *
@@ -26,6 +33,7 @@ import android.view.WindowManager;
  */
 
 public class ChuMuDisplayUtils {
+    private static final Point screenSize = new Point();
     @SuppressLint("StaticFieldLeak")
     private static Context sContext;
     
@@ -137,21 +145,106 @@ public class ChuMuDisplayUtils {
             }
         }
     }
-    
+
+
     /**
-     * 获取虚拟操作拦（home等）高度
+     * 9、获取屏幕像素点
      */
-    public static int getNavigationBarHeight(Activity activity) {
-        if (!isNavigationBarShow(activity))
-            return 0;
-        int height = 0;
-        Resources resources = activity.getResources();
-        //获取NavigationBar的高度
-        int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
-        if (resourceId > 0)
-            height = resources.getDimensionPixelSize(resourceId);
-        Log.e("Hubert", "NavigationBar的高度:" + height);
-        return height;
+    public static Point getScreenSize(Activity context) {
+
+        if (context == null) {
+            return screenSize;
+        }
+        WindowManager wm = (WindowManager) context
+                .getSystemService(Context.WINDOW_SERVICE);
+        if (wm != null) {
+            DisplayMetrics mDisplayMetrics = new DisplayMetrics();
+            Display diplay = wm.getDefaultDisplay();
+            if (diplay != null) {
+                diplay.getMetrics(mDisplayMetrics);
+                int W = mDisplayMetrics.widthPixels;
+                int H = mDisplayMetrics.heightPixels;
+                if (W * H > 0 && (W > screenSize.x || H > screenSize.y)) {
+                    screenSize.set(W, H);
+                }
+            }
+        }
+        return screenSize;
+    }
+
+
+    /**
+     * 获取虚拟功能键高度
+     */
+    public static int getNavigationBarHeight(Context context) {
+        int vh = 0;
+        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = windowManager.getDefaultDisplay();
+        DisplayMetrics dm = new DisplayMetrics();
+        try {
+            @SuppressWarnings("rawtypes")
+            Class c = Class.forName("android.view.Display");
+            @SuppressWarnings("unchecked")
+            Method method = c.getMethod("getRealMetrics", DisplayMetrics.class);
+            method.invoke(display, dm);
+            vh = dm.heightPixels - windowManager.getDefaultDisplay().getHeight();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return vh;
+    }
+    public static int getVirtualBarHeigh(Activity activity) {
+        int titleHeight = 0;
+        Rect frame = new Rect();
+        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusHeight = frame.top;
+        titleHeight = activity.getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop() - statusHeight;
+        return titleHeight;
+    }
+
+    /**
+     * 6、获取当前屏幕截图，包含状态栏
+     */
+    public static Bitmap getSnapShotWithStatusBar(Activity activity){
+        View decorView = activity.getWindow().getDecorView();
+        decorView.setDrawingCacheEnabled(true);
+        decorView.buildDrawingCache();
+        Bitmap bmp = decorView.getDrawingCache();
+        int width = getScreenWidth();
+        int height = getScreenHeight();
+        Bitmap bitmap = null;
+        bitmap = Bitmap.createBitmap(bmp, 0, 0, width, height);
+        decorView.destroyDrawingCache();
+        return bitmap;
+    }
+
+    /**
+     * 7、获取当前屏幕截图，不包含状态栏
+     */
+    public static Bitmap getSnapShotWithoutStatusBar(Activity activity){
+        View view = activity.getWindow().getDecorView();
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+        Bitmap bmp = view.getDrawingCache();
+        Rect frame = new Rect();
+        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusHeight = frame.top;
+        int width = getScreenWidth();
+        int height = getScreenHeight();
+        Bitmap bitmap = null;
+        bitmap = Bitmap.createBitmap(bmp, 0, statusHeight, width, height - statusHeight);
+        view.destroyDrawingCache();
+        return bitmap;
+    }
+
+    /**
+     * 8、获取DisplayMetrics对象
+     */
+    public static DisplayMetrics getDisplayMetrics(Context context){
+        WindowManager manager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics metrics = new DisplayMetrics();
+        manager.getDefaultDisplay().getMetrics(metrics);
+        return metrics;
     }
     
 }

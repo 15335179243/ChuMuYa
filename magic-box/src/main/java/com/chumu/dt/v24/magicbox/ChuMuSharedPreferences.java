@@ -28,6 +28,8 @@ public class ChuMuSharedPreferences {
     /**
      * Created by Administrator on 2019/6/11.
      * SharedPreferences封装
+     * apply：异步操作
+     * commit 同步操作
      */
 
 
