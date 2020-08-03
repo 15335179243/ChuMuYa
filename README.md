@@ -4,7 +4,7 @@ This is Chumu's code base. Welcome to this place. It's a great honor to serve yo
 
 #### 最近行开了一个团队，本项目以后就进行团队维护了，但每次发板的，还是由这边先发，需要抢先体验的就看这边，需要稳定版本的可以→[点击查看](https://github.com/ChuMuYa/ChuMuYa)
 
-​                                                          [![](https://img.shields.io/badge/CSDN-%E6%A5%9A%E6%9C%A8-green)](https://blog.csdn.net/qq_44729989)        [![](https://img.shields.io/badge/jitpack-2.0.1--beta-orange)](https://github.com/15335179243/ChuMuYa/releases/tag/v11-2.0.2-beta)
+​                                                          [![](https://img.shields.io/badge/CSDN-%E6%A5%9A%E6%9C%A8-green)](https://blog.csdn.net/qq_44729989)        [![](https://img.shields.io/badge/jitpack-2.0.2--beta-orange)](https://github.com/15335179243/ChuMuYa/releases/tag/v11-2.0.2-beta)
 
 Add it in your root build.gradle at the end of repositories:
 
