@@ -15,6 +15,7 @@ import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Log;
+
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -25,19 +26,22 @@ import java.util.Locale;
 
 
 /**
- *
- * @author vondear
- * @date 2016/1/24
- * TODO 相机相册工具   需要修改后添加
+ * @Description:主要功能: 相机相册工具
+ * @Prject: magic-box
+ * @date: 2018年05月24日 18:21
+ * @Copyright: 个人版权所有
+ * @Company:
+ * @version: 2.0.2-beta
  */
-
-public class RxPhotoTool {
+public class ChuMuPhotoManager {
     public static final int GET_IMAGE_BY_CAMERA = 5001;
     public static final int GET_IMAGE_FROM_PHONE = 5002;
     public static final int CROP_IMAGE = 5003;
     public static Uri imageUriFromCamera;
     public static Uri cropImageUri;
-
+    /**
+     * 打开相机
+     */
     public static void openCameraImage(final Activity activity) {
         imageUriFromCamera = createImagePathUri(activity);
 
@@ -48,7 +52,9 @@ public class RxPhotoTool {
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUriFromCamera);
         activity.startActivityForResult(intent, GET_IMAGE_BY_CAMERA);
     }
-
+    /**
+     * 打开相机
+     */
     public static void openCameraImage(final Fragment fragment) {
         imageUriFromCamera = createImagePathUri(fragment.getContext());
 
@@ -60,6 +66,9 @@ public class RxPhotoTool {
         fragment.startActivityForResult(intent, GET_IMAGE_BY_CAMERA);
     }
 
+    /**
+     * 打开本地相册
+     */
     public static void openLocalImage(final Activity activity) {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -67,13 +76,18 @@ public class RxPhotoTool {
         activity.startActivityForResult(intent, GET_IMAGE_FROM_PHONE);
     }
 
+    /**
+     * 打开本地相册
+     */
     public static void openLocalImage(final Fragment fragment) {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         fragment.startActivityForResult(intent, GET_IMAGE_FROM_PHONE);
     }
-
+    /**
+     * 调用系统裁剪图片
+     */
     public static void cropImage(Activity activity, Uri srcUri) {
         cropImageUri = createImagePathUri(activity);
 
@@ -107,7 +121,9 @@ public class RxPhotoTool {
 
         activity.startActivityForResult(intent, CROP_IMAGE);
     }
-
+    /**
+     * 调用系统裁剪图片
+     */
     public static void cropImage(Fragment fragment, Uri srcUri) {
         cropImageUri = createImagePathUri(fragment.getContext());
 
@@ -270,13 +286,19 @@ public class RxPhotoTool {
     public static boolean isExternalStorageDocument(Uri uri) {
         return "com.android.externalstorage.documents".equals(uri.getAuthority());
     }
+
     /**
+     * 是否是下载文档
      * @param uri The Uri to check.
      * @return Whether the Uri authority is DownloadsProvider.
      */
     public static boolean isDownloadsDocument(Uri uri) {
         return "com.android.providers.downloads.documents".equals(uri.getAuthority());
     }
+/**
+ *
+ * 获取数据路径
+ * */
     public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
         Cursor cursor = null;
         String column = MediaStore.Images.Media.DATA;
@@ -294,14 +316,18 @@ public class RxPhotoTool {
         }
         return null;
     }
+
     /**
+     * 是否是媒体文件
      * @param uri The Uri to check.
      * @return Whether the Uri authority is MediaProvider.
      */
     public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
+
     /**
+     * 是否为谷歌照片的uri
      * @param uri The Uri to check.
      * @return Whether the Uri authority is Google Photos.
      */

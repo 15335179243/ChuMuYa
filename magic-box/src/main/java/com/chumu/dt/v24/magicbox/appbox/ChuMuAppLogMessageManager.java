@@ -9,9 +9,9 @@ import com.chumu.dt.v24.magicbox.klog.ChuMuKLog;
  * @date: 2017年05月04日 14:13
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.1-beta
+ @version: 2.0.2-beta
  */
-public class ChuMuAppLogMessageManage {
+public class ChuMuAppLogMessageManager {
     //是否输出
     private static boolean isDebug = true;
 
@@ -19,7 +19,7 @@ public class ChuMuAppLogMessageManage {
      * 设置debug模式(true:打印日志  false：不打印)
      */
     public static void isEnableDebug(boolean isDebug){
-        ChuMuAppLogMessageManage.isDebug = isDebug;
+        ChuMuAppLogMessageManager.isDebug = isDebug;
     }
     
     /**

@@ -20,10 +20,10 @@ import java.util.regex.Pattern;
  * @date: 2017年05月04日 14:13
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.1-beta
+ @version: 2.0.2-beta
  */
 @SuppressLint("SimpleDateFormat")
-public class ChuMuAppSysDateManage {
+public class ChuMuAppSysDateManager {
 	
 	
 	private static SimpleDateFormat yyyyMMddFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -149,7 +149,7 @@ public class ChuMuAppSysDateManage {
 			return new SimpleDateFormat(dataFormat).parse(date);
 		} catch (ParseException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageManage.e("ChuMuAppSysDateManage-->>getFormatDateByString", e.getMessage().toString());
+			ChuMuAppLogMessageManager.e("ChuMuAppSysDateManage-->>getFormatDateByString", e.getMessage().toString());
 			return null;
 		}
 	}
@@ -167,7 +167,7 @@ public class ChuMuAppSysDateManage {
 			return new SimpleDateFormat(chianDataFormat).format(new SimpleDateFormat(dataFormat).parse(date));
 		} catch (ParseException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageManage.e("ChuMuAppSysDateManage-->>getFormatDateByString", e.getMessage().toString());
+			ChuMuAppLogMessageManager.e("ChuMuAppSysDateManage-->>getFormatDateByString", e.getMessage().toString());
 			return null;
 		}
 	}
@@ -185,7 +185,7 @@ public class ChuMuAppSysDateManage {
 			return new SimpleDateFormat("yyyy年MM月dd日").format(new SimpleDateFormat("yyyy-MM-dd").parse(date));
 		} catch (ParseException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageManage.e("ChuMuAppSysDateManage-->>getFormatDateByString", e.getMessage().toString());
+			ChuMuAppLogMessageManager.e("ChuMuAppSysDateManage-->>getFormatDateByString", e.getMessage().toString());
 			return null;
 		}
 	}
@@ -201,7 +201,7 @@ public class ChuMuAppSysDateManage {
 			return new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒").format(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(date));
 		} catch (ParseException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageManage.e("ChuMuAppSysDateManage-->>getFormatDateFullByString", e.getMessage().toString());
+			ChuMuAppLogMessageManager.e("ChuMuAppSysDateManage-->>getFormatDateFullByString", e.getMessage().toString());
 			return null;
 		}
 	}
@@ -385,7 +385,7 @@ public class ChuMuAppSysDateManage {
 	        }
 		} catch (ParseException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageManage.e("ChuMuAppSysDateManage-->>getSysIsToday", e.getMessage().toString());
+			ChuMuAppLogMessageManager.e("ChuMuAppSysDateManage-->>getSysIsToday", e.getMessage().toString());
 		}
         	return falg;
     }
@@ -405,7 +405,7 @@ public class ChuMuAppSysDateManage {
 			simpledateformat.parse(data);
 		} catch (ParseException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageManage.e("ChuMuAppSysDateManage-->>getDateIsTrue", e.getMessage().toString());
+			ChuMuAppLogMessageManager.e("ChuMuAppSysDateManage-->>getDateIsTrue", e.getMessage().toString());
 			return false;
 		}
 			return true;
@@ -421,12 +421,12 @@ public class ChuMuAppSysDateManage {
 	public static boolean getDateIsBefore(String strdate1, String strdate2){
 		try {
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			ChuMuAppLogMessageManage.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate1: ", strdate1);
-			ChuMuAppLogMessageManage.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate2: ", strdate2);
+			ChuMuAppLogMessageManager.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate1: ", strdate1);
+			ChuMuAppLogMessageManager.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate2: ", strdate2);
 			return df.parse(strdate1).before(df.parse(strdate2));
 		} catch (ParseException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageManage.e("ChuMuAppSysDateManage-->>getDateIsBefore", e.getMessage().toString());
+			ChuMuAppLogMessageManager.e("ChuMuAppSysDateManage-->>getDateIsBefore", e.getMessage().toString());
 			return false;
 		}
 	}
@@ -442,7 +442,7 @@ public class ChuMuAppSysDateManage {
 			return df.parse(strdate1).equals(df.parse(strdate2));
 		} catch (ParseException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageManage.e("ChuMuAppSysDateManage-->>getDateIsBefore", e.getMessage().toString());
+			ChuMuAppLogMessageManager.e("ChuMuAppSysDateManage-->>getDateIsBefore", e.getMessage().toString());
 			return false;
 		}
 	}
@@ -455,14 +455,14 @@ public class ChuMuAppSysDateManage {
 	 */
 	public static boolean getDateIsBefore(Long Longdate1, Long Longdate2){
 		try {
-			ChuMuAppLogMessageManage.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate1: ", Longdate1 + "");
-			ChuMuAppLogMessageManage.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate2: ", Longdate2 + "");
+			ChuMuAppLogMessageManager.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate1: ", Longdate1 + "");
+			ChuMuAppLogMessageManager.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate2: ", Longdate2 + "");
 			Longdate1 = (null == Longdate1) ? 0 : Longdate1;
 			Longdate2 = (null == Longdate2) ? 0 : Longdate2;
 			return  Longdate1 > Longdate2 ? true : false;
 		} catch (Exception e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageManage.e("ChuMuAppSysDateManage-->>getDateIsBefore", e.getMessage().toString());
+			ChuMuAppLogMessageManager.e("ChuMuAppSysDateManage-->>getDateIsBefore", e.getMessage().toString());
 			return false;
 		}
 	}
@@ -491,12 +491,12 @@ public class ChuMuAppSysDateManage {
 	public static boolean getDateIsBeforeYYMMDD(String strdate1, String strdate2){
 		try {
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-			ChuMuAppLogMessageManage.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate1: ", strdate1);
-			ChuMuAppLogMessageManage.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate2: ", strdate2);
+			ChuMuAppLogMessageManager.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate1: ", strdate1);
+			ChuMuAppLogMessageManager.i("ChuMuAppSysDateManage-->>getDateIsBefore-->>strdate2: ", strdate2);
 			return df.parse(strdate1).before(df.parse(strdate2));
 		} catch (ParseException e) {
 			e.printStackTrace();
-			ChuMuAppLogMessageManage.e("ChuMuAppSysDateManage-->>getDateIsBefore", e.getMessage().toString());
+			ChuMuAppLogMessageManager.e("ChuMuAppSysDateManage-->>getDateIsBefore", e.getMessage().toString());
 			return false;
 		}
 	}

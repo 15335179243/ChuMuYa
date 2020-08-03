@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
  * @date: 2017年05月03日 16:37
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.1-beta
+ @version: 2.0.2-beta
  */
 @SuppressLint("SimpleDateFormat")
 @SuppressWarnings("rawtypes")
@@ -367,7 +367,7 @@ public class ChuMuAppValidationManager {
 		//================ 身份证号码的长度 15位或18位 ================
 		if (IDCardNo.length() != 15 && IDCardNo.length() != 18) {
 			errmsg = "身份证号码长度应该为15位或18位!";
-			ChuMuAppLogMessageManage.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
+			ChuMuAppLogMessageManager.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
 			return false;
 		}
 		
@@ -379,7 +379,7 @@ public class ChuMuAppValidationManager {
 		}
 		if (isNumber(Ai) == false) {
 			errmsg = "身份证15位号码都应为数字 ; 18位号码除最后一位外，都应为数字";
-			ChuMuAppLogMessageManage.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
+			ChuMuAppLogMessageManager.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
 			return false;
 		}
 		
@@ -390,9 +390,9 @@ public class ChuMuAppValidationManager {
 		String strMonth = Ai.substring(10, 12);
 		//日
 		String strDay = Ai.substring(12, 14);
-		if (ChuMuAppSysDateManage.getDateIsTrue(strYear, strMonth, strDay) == false) {
+		if (ChuMuAppSysDateManager.getDateIsTrue(strYear, strMonth, strDay) == false) {
 			errmsg = "身份证生日无效";
-			ChuMuAppLogMessageManage.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
+			ChuMuAppLogMessageManager.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
 			return false;
 		}
 		GregorianCalendar gc = new GregorianCalendar();
@@ -400,36 +400,36 @@ public class ChuMuAppValidationManager {
 		try {
 			if ((gc.get(Calendar.YEAR) - Integer.parseInt(strYear)) > 150 || (gc.getTime().getTime() - s.parse(strYear + "-" + strMonth + "-" + strDay).getTime()) < 0) {
 				errmsg = "身份证生日不在有效范围";
-				ChuMuAppLogMessageManage.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
+				ChuMuAppLogMessageManager.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
 				return false;
 			}
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 			errmsg = "身份证生日不在有效范围";
-			ChuMuAppLogMessageManage.e("ChuMuAppValidationManager-->>isIDCard", errmsg  + e.getMessage());
+			ChuMuAppLogMessageManager.e("ChuMuAppValidationManager-->>isIDCard", errmsg  + e.getMessage());
 			return false;
 		} catch (java.text.ParseException e1) {
 			e1.printStackTrace();
 			errmsg = "身份证生日不在有效范围";
-			ChuMuAppLogMessageManage.e("ChuMuAppValidationManager-->>isIDCard", errmsg + e1.getMessage());
+			ChuMuAppLogMessageManager.e("ChuMuAppValidationManager-->>isIDCard", errmsg + e1.getMessage());
 			return false;
 		}
 		if (Integer.parseInt(strMonth) > 12 || Integer.parseInt(strMonth) == 0) {
 			errmsg = "身份证月份无效";
-			ChuMuAppLogMessageManage.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
+			ChuMuAppLogMessageManager.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
 			return false;
 		}
 		if (Integer.parseInt(strDay) > 31 || Integer.parseInt(strDay) == 0) {
 			errmsg = "身份证日期无效";
-			ChuMuAppLogMessageManage.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
+			ChuMuAppLogMessageManager.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
 			return false;
 		}
 
 		//================ 地区码时候有效 ================
-		Hashtable hashtable = ChuMuAppInfoManage.getAreaCodeAll();
+		Hashtable hashtable = ChuMuAppInfoManager.getAreaCodeAll();
 		if (hashtable.get(Ai.substring(0, 2)) == null) {
 			errmsg = "身份证地区编码错误";
-			ChuMuAppLogMessageManage.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
+			ChuMuAppLogMessageManager.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
 			return false;
 		}
 
@@ -444,7 +444,7 @@ public class ChuMuAppValidationManager {
 		if (IDCardNo.length() == 18) {
 			if (Ai.equals(IDCardNo) == false) {
 				errmsg = "身份证无效，不是合法的身份证号码";
-				ChuMuAppLogMessageManage.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
+				ChuMuAppLogMessageManager.e("ChuMuAppValidationManager-->>isIDCard", errmsg);
 				return false;
 			}
 		} else {

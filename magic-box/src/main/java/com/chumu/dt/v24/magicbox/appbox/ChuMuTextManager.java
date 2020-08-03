@@ -37,14 +37,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import static android.graphics.BlurMaskFilter.Blur;
-
 /**
- * @author vondear
- * @date 2016/12/23
- * text文本样式需要加进去
+// * @Description:主要功能: textView复杂文本样式设置
+ *  @Prject: magic-box
+ * @date: 2018年06月24日 15:31
+ * @Copyright: 个人版权所有
+ * @Company:
+ @version: 2.0.2-beta
  */
 
-public class RxTextTool {
+public class ChuMuTextManager {
 
     /**
      * 获取建造者

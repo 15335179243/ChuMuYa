@@ -1,6 +1,6 @@
 
 # 百宝箱(在这里找到您想要的)
-## ChuMuSharePreference缓存数据 → [ChuMuAppSharePreferenceManage](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/ChuMuFramgentManage.java)
+## ChuMuSharePreference缓存数据 → [ChuMuAppSharePreferenceManager](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/ChuMuFramgentManager.java)
 
 ```
 put     : 保存数据的方法
@@ -28,7 +28,7 @@ getParcelableList  :获取继承Parcelable集合方法
 
 
 
-## 提供App数据清理工作的类 → [ChuMuAppCleanManage](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuAppCleanManage.java)
+## 提供App数据清理工作的类 → [ChuMuAppCleanManager](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuAppCleanManager.java)
 
 ```
 cleanInternalCache   ： 清除本应用内部缓存数据
@@ -63,7 +63,7 @@ clear           : 清除所有数据
 
 
 
-## 获取App应用版本信息 → [ChuMuAppApplicationManage](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuAppApplicationManage.java)
+## 获取App应用版本信息 → [ChuMuAppApplicationManager](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuAppApplicationManager.java)
 
 ```
 getAppName             : 获取本地apk的名称
@@ -146,7 +146,7 @@ isRealDate           : 是否是日期 20120506 共八位，前四位-年，中�
 
 ## 
 
-## 日期管理类 → [ChuMuAppDateMange](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuAppDateMange.java)
+## 日期管理类 → [ChuMuAppDateManger](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuAppDateManger.java)
 
 ```
 todayYyyyMmDd           : 当天的年月日
@@ -202,6 +202,41 @@ convertMillisecond      : 将格式化过的时间串转换成毫秒
 getDateInterval         : 得到两个日期的天数
 compareTime             : 时间比较
 ```
+
+## TextView复杂样式 → [ChuMuTextManager](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuTextManager.java)
+```
+getBuilder          ：获取建造者
+setFlag             ：设置标识
+setForegroundColor  ：设置前景色
+setBackgroundColor  ：设置背景色
+setQuoteColor       ：设置引用线的颜色
+setLeadingMargin    ：设置缩进
+setBullet			：设置列表标记
+setProportion		：设置字体比例
+setXProportion		：设置字体横向比例
+setStrikethrough	：设置删除线
+setUnderline		：设置下划线
+setSuperscript		：设置上标
+setSubscript		：设置下标
+setBold				：设置粗体
+setItalic			：设置斜体
+setBoldItalic		：设置粗斜体
+setFontFamily		：设置字体
+setAlign			：设置对齐
+setBitmap			：设置图片
+setDrawable			：设置drawable图片
+setUri				：设置Uri图片
+setResourceId		：设置资源图片
+setClickSpan		：设置点击事件
+setUrl				：设置超链接
+setBlur				：设置模糊
+append				:追加样式字符串
+create				:创建样式字符串
+into				:需要设置进去的textView
+
+```
+
+
 ## 屏幕显示相关 → [ChuMuDisplayUtils](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuDisplayUtils.java)
 
 ```

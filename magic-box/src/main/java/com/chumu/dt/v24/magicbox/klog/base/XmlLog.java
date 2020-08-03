@@ -21,7 +21,7 @@ import java.io.StringWriter;
  * @date: 2017年05月16日 16:56
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.1-beta
+ @version: 2.0.2-beta
  */
 public class XmlLog {
 

@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * @date: 2017年05月03日 16:34
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.1-beta
+ @version: 2.0.2-beta
  */
 public class ChuMuAppACache {
 

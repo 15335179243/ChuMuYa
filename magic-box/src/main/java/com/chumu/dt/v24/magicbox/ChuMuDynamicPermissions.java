@@ -8,32 +8,69 @@ import com.chumu.dt.v24.magicbox.klog.ChuMuKLog;
 
 import java.util.List;
 
+import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
+import androidx.annotation.StyleRes;
+
 import pub.devrel.easypermissions.EasyPermissions;
 import pub.devrel.easypermissions.PermissionRequest;
 
 /****
- * 准备弃用,原因是这个框架他不能实现自定义ui
+ * 待测试是否实用
  * */
-@Deprecated
+
 public class ChuMuDynamicPermissions implements EasyPermissions.PermissionCallbacks, EasyPermissions.RationaleCallbacks {
     private int REQUEST_FILE_CODE = 99;
 
     private boolean flag = false;
     private Activity youActivity;
-    String[] permissions;
-    private static ChuMuDynamicPermissions mChuMuDynamicPermissions;
+    private String[] permissions;
+    private volatile static ChuMuDynamicPermissions mChuMuDynamicPermissions;
+    private int theme;
+    private String rationale="请确认相关权限！！";
+    private String positiveButtonText="确认";
+    private String negativeButtonText="取消";
 
-    public static ChuMuDynamicPermissions getInstance() {
-        if (mChuMuDynamicPermissions==null) {
-            mChuMuDynamicPermissions = new ChuMuDynamicPermissions();
+    private ChuMuDynamicPermissions() {
+        throw new IllegalArgumentException("u can't instantiate me...");
+    }
+
+    public ChuMuDynamicPermissions setRationale(String rationale) {
+        this.rationale = rationale;
+        return mChuMuDynamicPermissions;
+    }
+
+    public ChuMuDynamicPermissions setPositiveButtonText(String positiveButtonText) {
+        this.positiveButtonText = positiveButtonText;
+        return mChuMuDynamicPermissions;
+    }
+
+    public ChuMuDynamicPermissions setNegativeButtonText(String negativeButtonText) {
+        this.negativeButtonText = negativeButtonText;
+        return mChuMuDynamicPermissions;
+    }
+
+    public synchronized static ChuMuDynamicPermissions getInstance() {
+        if (mChuMuDynamicPermissions == null) {
+            synchronized (ChuMuDynamicPermissions.class) {
+                if (mChuMuDynamicPermissions == null) {
+                    mChuMuDynamicPermissions = new ChuMuDynamicPermissions();
+                }
+            }
+
         }
         return mChuMuDynamicPermissions;
     }
 
     public boolean setPermissions(Activity youActivity, String[] permissions) {
+
+        return setPermissions(youActivity, permissions, R.style.chu_mu_dialog_ui_anim);
+    }
+
+    public boolean setPermissions(Activity youActivity, String[] permissions, @StyleRes int themeId) {
         this.youActivity = youActivity;
         this.permissions = permissions;
+        theme = themeId;
         init();
         return isFlag();
     }
@@ -50,28 +87,22 @@ public class ChuMuDynamicPermissions implements EasyPermissions.PermissionCallba
             flag = false;
             EasyPermissions.requestPermissions(
                     new PermissionRequest.Builder(youActivity, REQUEST_FILE_CODE, permissions)
-                            .setRationale("请确认相关权限！！")
-                            .setPositiveButtonText("ok")
-                            .setNegativeButtonText("cancal")
-//                            .setTheme(R.style.my_fancy_style)
+                            .setRationale(rationale)
+                            .setPositiveButtonText(positiveButtonText)
+                            .setNegativeButtonText(negativeButtonText)
+                            .setTheme(theme)
                             .build());
         }
 
     }
 
-    @Override
-    public void onRequestPermissionsResult(int i, @NonNull String[] strings, @NonNull int[] ints) {
-        EasyPermissions.onRequestPermissionsResult(i, permissions, ints, this);
-    }
-    //    @Override
-//    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//
-//        // Forward results to EasyPermissions
-//
-//    }
 
-    private static final String TAG = "Share";
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    private static final String TAG = "======================权限请求=========================";
 
     @Override
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {

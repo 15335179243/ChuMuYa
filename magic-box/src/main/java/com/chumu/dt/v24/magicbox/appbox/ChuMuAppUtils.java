@@ -12,7 +12,7 @@ import com.chumu.dt.v24.magicbox.klog.ChuMuKLogUtil;
  * @date: 2017年05月19日 14:09
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.1-beta
+ @version: 2.0.2-beta
  */
 
 public class ChuMuAppUtils {
@@ -34,10 +34,10 @@ public class ChuMuAppUtils {
             ChuMuDisplayUtils.init(context);
 
                     for (int i = 0; i < 2; i++) {
-                        ChuMuKLogUtil.printLine(context.getOpPackageName(), true);
-                        ChuMuKLog.e(context.getOpPackageName(), "\t" + "欢迎使用ChuMu(快速开发工具包)" + "\n" + "载入正常,如有什么使用问题,欢迎GitHub留言,项目地址  : https://github.com/15335179243/ChuMuYa" +
+                        ChuMuKLogUtil.printLine(context.getPackageName(), true);
+                        ChuMuKLog.e(context.getPackageName(), "\t" + "欢迎使用ChuMu(快速开发工具包)" + "\n" + "载入正常,如有什么使用问题,欢迎GitHub留言,项目地址  : https://github.com/15335179243/ChuMuYa" +
                                 "\n" + "感谢您的意见和反馈,祝您生活愉快!!!");
-                        ChuMuKLogUtil.printLine(context.getOpPackageName(), false);
+                        ChuMuKLogUtil.printLine(context.getPackageName(), false);
                     }
 
         }

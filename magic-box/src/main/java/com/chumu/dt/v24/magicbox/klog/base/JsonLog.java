@@ -6,7 +6,7 @@ package com.chumu.dt.v24.magicbox.klog.base;
  * @date: 2017年05月16日 16:56
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.1-beta
+ @version: 2.0.2-beta
  */
 
 

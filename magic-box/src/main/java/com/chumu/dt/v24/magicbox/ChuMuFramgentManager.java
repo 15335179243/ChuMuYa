@@ -11,7 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
  *
  */
 
-public class ChuMuFramgentManage {
+public class ChuMuFramgentManager {
 
     public static void addFragment(FragmentManager manager, Class<? extends Fragment> tClass, int layoutId){
         addFragment(manager,tClass,layoutId,null,false);

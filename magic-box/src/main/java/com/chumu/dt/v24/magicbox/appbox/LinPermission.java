@@ -119,7 +119,7 @@ public class LinPermission {
             ActivityCompat.requestPermissions(context, new String[]{permission}, RequestCode_Permission);
         } else {//点击禁止后不再提示动态申请  手动开启
             //可以自定义弹窗提示 是否手动开启
-            LinToPermission.init(context).jumpPermissionPage();
+            ChuMuPermissionTools.init(context).jumpPermissionPage();
         }
     }
 

@@ -12,7 +12,7 @@ import java.security.NoSuchAlgorithmException;
  * @date: 2017年05月16日 15:58
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.1-beta
+ @version: 2.0.2-beta
  */
 
 public class ChuMuTripleDESUtils {

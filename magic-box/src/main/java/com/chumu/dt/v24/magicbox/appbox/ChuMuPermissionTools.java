@@ -11,39 +11,47 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 
+import com.chumu.dt.v24.magicbox.klog.ChuMuKLog;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
 /**
- * TODO 跳转权限设置界面
- * 来源：https://blog.csdn.net/donkor_/article/details/79374442
+ * @Description:主要功能: 跳转权限设置界面
+ *  @Prject: magic-box
+ * @date: 2019年08月14日 14:32
+ * @Copyright: 个人版权所有
+ * @Company:
+ @version: 2.0.2-beta
  */
-public class LinToPermission {
+public class ChuMuPermissionTools {
     private final String TAG = "PermissionPageManager";
     private Context mContext;
     //自己的项目包名
-    private static LinToPermission linToPermission;
-
-    private LinToPermission(Context context) {
+    private static ChuMuPermissionTools sChuMuPermissionTools;
+    private ChuMuPermissionTools(){
+        throw new IllegalArgumentException("u can't instantiate me...");
+    }
+    private ChuMuPermissionTools(Context context) {
         this.mContext = context;
     }
 
-    public static LinToPermission init(Context context) {
-        if (linToPermission == null) {
-            synchronized (LinToPermission.class) {
-                if (linToPermission == null) {
-                    linToPermission = new LinToPermission(context);
+    public static ChuMuPermissionTools init(Context context) {
+        if (sChuMuPermissionTools == null) {
+            synchronized (ChuMuPermissionTools.class) {
+                if (sChuMuPermissionTools == null) {
+                    sChuMuPermissionTools = new ChuMuPermissionTools(context);
                 }
             }
         }
-        return linToPermission;
+        return sChuMuPermissionTools;
     }
 
     public void jumpPermissionPage() {
         String name = Build.MANUFACTURER;
-        LogUtils.e("jumpPermissionPage --- name : " + name);
+        ChuMuKLog.e("jumpPermissionPage --- name : " + name);
         switch (name) {
             case "HUAWEI":
                 goHuaWeiMainager();
@@ -110,7 +118,7 @@ public class LinToPermission {
             intent.setComponent(comp);
             mContext.startActivity(intent);
         } catch (Exception e) {
-            LogUtils.e(e.getMessage());
+            ChuMuKLog.e(e.getMessage());
             e.printStackTrace();
             goIntentSetting();
         }
@@ -244,7 +252,7 @@ public class LinToPermission {
         List<ResolveInfo> resolveinfoList = mContext.getPackageManager()
                 .queryIntentActivities(resolveIntent, 0);
         for (int i = 0; i < resolveinfoList.size(); i++) {
-            LogUtils.e(resolveinfoList.get(i).activityInfo.packageName + resolveinfoList.get(i).activityInfo.name);
+            ChuMuKLog.e(resolveinfoList.get(i).activityInfo.packageName + resolveinfoList.get(i).activityInfo.name);
         }
         ResolveInfo resolveinfo = resolveinfoList.iterator().next();
         if (resolveinfo != null) {

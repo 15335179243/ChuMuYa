@@ -2,8 +2,9 @@
 
 This is Chumu's code base. Welcome to this place. It's a great honor to serve you. What suggestions can you leave a message or add QQ: 1970874029 for communication.
 
+#### 最近行开了一个团队，本项目以后就进行团队维护了，但每次发板的，还是由这边先发，需要抢先体验的就看这边，需要稳定版本的可以→[点击查看](https://github.com/ChuMuYa/ChuMuYa)
 
-​                                                          [![](https://img.shields.io/badge/CSDN-%E6%A5%9A%E6%9C%A8-green)](https://blog.csdn.net/qq_44729989)        [![](https://img.shields.io/badge/jitpack-2.0.1--beta-orange)](https://github.com/15335179243/ChuMuYa/releases/tag/v11-2.0.1-beta)
+​                                                          [![](https://img.shields.io/badge/CSDN-%E6%A5%9A%E6%9C%A8-green)](https://blog.csdn.net/qq_44729989)        [![](https://img.shields.io/badge/jitpack-2.0.1--beta-orange)](https://github.com/15335179243/ChuMuYa/releases/tag/v11-2.0.2-beta)
 
 Add it in your root build.gradle at the end of repositories:
 
@@ -21,11 +22,11 @@ Step 2. Add the dependency
 ```java
 dependencies {
 
-        implementation 'com.github.15335179243:ChuMuYa:v11-2.0.1-beta'
+        implementation 'com.github.15335179243:ChuMuYa:v11-2.0.2-beta'
 }
 ```
 
-## usag
+## usag 这边给大家简单演示一下具体使用请看代码
 
 
 ##
@@ -165,3 +166,25 @@ tv.setsetTextColor(ChuMuRandomColor.onRandomCOlor());
 
 
 ## ChuMuDialogFragment(对官方DialogFragment内存泄漏问题进行解决) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/basedialogframgent/BaseDialogFragment.md)
+
+
+# v11-2.0.2更新
+
+
+## ChuMuDynamicPermissions(对其进行修改维护，待测试实用性) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/ChuMuSharedPreferences.java)
+1. 增加自定义权限弹窗样式
+2. 增加支持设定弹窗内容以及确认取消文案
+
+
+## ChuMuTextManager(对textView样式进行负责的编辑，如html的样式) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuTextManager.java)
+### [使用查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/AppBox.md)
+
+
+
+## ChuMuPhotoManager(相机相册裁剪工具类) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuPhotoManager.java)
+
+
+
+## ChuMuTimeRefresher(时间刷新器，方便进行定时请求，或者定时做某些事情) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuTimeRefresher.java)
+
+

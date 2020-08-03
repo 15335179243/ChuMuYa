@@ -35,10 +35,10 @@ import java.util.regex.Pattern;
  * @date: 2017年05月03日 16:37
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.1-beta
+ @version: 2.0.2-beta
  */
 @SuppressWarnings("rawtypes")
-public class ChuMuAppApplicationManage {
+public class ChuMuAppApplicationManager {
 
     /**
      * 获取本地apk的名称
@@ -234,7 +234,7 @@ public class ChuMuAppApplicationManage {
             PackageInfo pis = context.getPackageManager().getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
             return hexdigest(pis.signatures[0].toByteArray());
         } catch (NameNotFoundException e) {
-            throw new RuntimeException(ChuMuAppApplicationManage.class.getName() + "the " + packageName + "'s application not found");
+            throw new RuntimeException(ChuMuAppApplicationManager.class.getName() + "the " + packageName + "'s application not found");
         }
     }
 

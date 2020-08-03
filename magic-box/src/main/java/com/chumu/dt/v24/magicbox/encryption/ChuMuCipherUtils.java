@@ -1,6 +1,6 @@
 package com.chumu.dt.v24.magicbox.encryption;
 
-import com.chumu.dt.v24.magicbox.appbox.ChuMuAppFileManage;
+import com.chumu.dt.v24.magicbox.appbox.ChuMuAppFileManager;
 
 
 import java.io.File;
@@ -17,7 +17,7 @@ import java.security.NoSuchAlgorithmException;
  * @date: 2017年06月02日 10:05
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.1-beta
+ @version: 2.0.2-beta
  */
 
 public class ChuMuCipherUtils {
@@ -157,7 +157,7 @@ public class ChuMuCipherUtils {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            ChuMuAppFileManage.closeIO(in);
+            ChuMuAppFileManager.closeIO(in);
         }
         return null;
     }
