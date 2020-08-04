@@ -188,9 +188,8 @@ tv.setsetTextColor(ChuMuRandomColor.onRandomCOlor());
 ## ChuMuTimeRefresher(时间刷新器，方便进行定时请求，或者定时做某些事情) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuTimeRefresher.java)
 
 
-
-
-
+### 开源协议许可证
+```css
  Copyright [ChuMuYa] [name of copyright owner]
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -204,3 +203,7 @@ tv.setsetTextColor(ChuMuRandomColor.onRandomCOlor());
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+```
+
+
