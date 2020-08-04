@@ -315,3 +315,25 @@ XorDecode : 异或解密
 sha1 : 字符串sha1值
 ```
 
+## 获取动态权限工具类 → [ChuMuPermission](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuPermission.java)
+
+```
+getInstance                 : 实例化类
+onRequestPermissionsResult  ：申请结果回调在Activity的onRequestPermissionsResult中调用
+requestPermission           : 请求单个或者多个权限
+checkPermissions            : 检测单个或者多个权限是否已经授权
+verifyPermissions           ：确认所有的权限是否都已授权
+showTipsDialog              : 显示提示对话框需要的时候手动调用
+onRequestPermissionSuccess  : 权限申请成功回调
+onRequestPermissionFailure  : 权限申请失败回调
+```
+
+
+
+## 打开手动设置权限页面 → [ChuMuPermissionTools](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuPermissionTools.java)
+
+```
+这个类使用方法就是当用户拒绝了权限，并且不在提示，这时候就会没有弹窗，使用我们使用这个类直接调方法（已经适配到Android4.4）
+
+   ChuMuPermissionTools.init(mContext).jumpPermissionPage();
+```

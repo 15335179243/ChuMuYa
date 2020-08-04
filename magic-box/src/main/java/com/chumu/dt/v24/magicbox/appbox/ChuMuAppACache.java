@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -26,7 +27,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * @date: 2017年05月03日 16:34
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.2-beta
+ * * @version: 2.0.3-beta
  */
 public class ChuMuAppACache {
 
@@ -87,7 +88,7 @@ public class ChuMuAppACache {
      * Provides a means to save a cached file before the data are available.
      * Since writing about the file is complete, and its close method is called,
      * its contents will be registered in the cache. Example of use:
-     *
+     * <p>
      * ACache cache = new ACache(this) try { OutputStream stream =
      * cache.put("myFileName") stream.write("some bytes".getBytes()); // now
      * update cache! stream.close(); } catch(FileNotFoundException e){
@@ -110,13 +111,12 @@ public class ChuMuAppACache {
     // =======================================
     // ============ String数据 读写 ==============
     // =======================================
+
     /**
      * 保存 String数据 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的String数据
+     *
+     * @param key   保存的key
+     * @param value 保存的String数据
      */
     public void put(String key, String value) {
         File file = mCache.newFile(key);
@@ -141,13 +141,10 @@ public class ChuMuAppACache {
 
     /**
      * 保存 String数据 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的String数据
-     * @param saveTime
-     *            保存的时间，单位：秒
+     *
+     * @param key      保存的key
+     * @param value    保存的String数据
+     * @param saveTime 保存的时间，单位：秒
      */
     public void put(String key, String value, int saveTime) {
         put(key, Utils.newStringWithDateInfo(saveTime, value));
@@ -155,7 +152,7 @@ public class ChuMuAppACache {
 
     /**
      * 读取 String数据
-     * 
+     *
      * @param key
      * @return String 数据
      */
@@ -197,13 +194,12 @@ public class ChuMuAppACache {
     // =======================================
     // ============= JSONObject 数据 读写 ==============
     // =======================================
+
     /**
      * 保存 JSONObject数据 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的JSON数据
+     *
+     * @param key   保存的key
+     * @param value 保存的JSON数据
      */
     public void put(String key, JSONObject value) {
         put(key, value.toString());
@@ -211,13 +207,10 @@ public class ChuMuAppACache {
 
     /**
      * 保存 JSONObject数据 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的JSONObject数据
-     * @param saveTime
-     *            保存的时间，单位：秒
+     *
+     * @param key      保存的key
+     * @param value    保存的JSONObject数据
+     * @param saveTime 保存的时间，单位：秒
      */
     public void put(String key, JSONObject value, int saveTime) {
         put(key, value.toString(), saveTime);
@@ -225,7 +218,7 @@ public class ChuMuAppACache {
 
     /**
      * 读取JSONObject数据
-     * 
+     *
      * @param key
      * @return JSONObject数据
      */
@@ -243,13 +236,12 @@ public class ChuMuAppACache {
     // =======================================
     // ============ JSONArray 数据 读写 =============
     // =======================================
+
     /**
      * 保存 JSONArray数据 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的JSONArray数据
+     *
+     * @param key   保存的key
+     * @param value 保存的JSONArray数据
      */
     public void put(String key, JSONArray value) {
         put(key, value.toString());
@@ -257,13 +249,10 @@ public class ChuMuAppACache {
 
     /**
      * 保存 JSONArray数据 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的JSONArray数据
-     * @param saveTime
-     *            保存的时间，单位：秒
+     *
+     * @param key      保存的key
+     * @param value    保存的JSONArray数据
+     * @param saveTime 保存的时间，单位：秒
      */
     public void put(String key, JSONArray value, int saveTime) {
         put(key, value.toString(), saveTime);
@@ -271,7 +260,7 @@ public class ChuMuAppACache {
 
     /**
      * 读取JSONArray数据
-     * 
+     *
      * @param key
      * @return JSONArray数据
      */
@@ -289,13 +278,12 @@ public class ChuMuAppACache {
     // =======================================
     // ============== byte 数据 读写 =============
     // =======================================
+
     /**
      * 保存 byte数据 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的数据
+     *
+     * @param key   保存的key
+     * @param value 保存的数据
      */
     public void put(String key, byte[] value) {
         File file = mCache.newFile(key);
@@ -321,23 +309,18 @@ public class ChuMuAppACache {
     /**
      * Cache for a stream
      *
-     * @param key
-     *            the file name.
+     * @param key the file name.
      * @return OutputStream stream for writing data.
-     * @throws FileNotFoundException
-     *             if the file can not be created.
+     * @throws FileNotFoundException if the file can not be created.
      */
     public OutputStream put(String key) throws FileNotFoundException {
         return new xFileOutputStream(mCache.newFile(key));
     }
 
     /**
-     *
-     * @param key
-     *            the file name.
+     * @param key the file name.
      * @return (InputStream or null) stream previously saved in cache.
-     * @throws FileNotFoundException
-     *             if the file can not be opened
+     * @throws FileNotFoundException if the file can not be opened
      */
     public InputStream get(String key) throws FileNotFoundException {
         File file = mCache.get(key);
@@ -348,13 +331,10 @@ public class ChuMuAppACache {
 
     /**
      * 保存 byte数据 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的数据
-     * @param saveTime
-     *            保存的时间，单位：秒
+     *
+     * @param key      保存的key
+     * @param value    保存的数据
+     * @param saveTime 保存的时间，单位：秒
      */
     public void put(String key, byte[] value, int saveTime) {
         put(key, Utils.newByteArrayWithDateInfo(saveTime, value));
@@ -362,7 +342,7 @@ public class ChuMuAppACache {
 
     /**
      * 获取 byte 数据
-     * 
+     *
      * @param key
      * @return byte 数据
      */
@@ -401,13 +381,12 @@ public class ChuMuAppACache {
     // =======================================
     // ============= 序列化 数据 读写 ===============
     // =======================================
+
     /**
      * 保存 Serializable数据 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的value
+     *
+     * @param key   保存的key
+     * @param value 保存的value
      */
     public void put(String key, Serializable value) {
         put(key, value, -1);
@@ -415,13 +394,10 @@ public class ChuMuAppACache {
 
     /**
      * 保存 Serializable数据到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的value
-     * @param saveTime
-     *            保存的时间，单位：秒
+     *
+     * @param key      保存的key
+     * @param value    保存的value
+     * @param saveTime 保存的时间，单位：秒
      */
     public void put(String key, Serializable value, int saveTime) {
         ByteArrayOutputStream baos = null;
@@ -448,7 +424,7 @@ public class ChuMuAppACache {
 
     /**
      * 读取 Serializable数据
-     * 
+     *
      * @param key
      * @return Serializable 数据
      */
@@ -487,13 +463,12 @@ public class ChuMuAppACache {
     // =======================================
     // ============== bitmap 数据 读写 =============
     // =======================================
+
     /**
      * 保存 bitmap 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的bitmap数据
+     *
+     * @param key   保存的key
+     * @param value 保存的bitmap数据
      */
     public void put(String key, Bitmap value) {
         put(key, Utils.Bitmap2Bytes(value));
@@ -501,13 +476,10 @@ public class ChuMuAppACache {
 
     /**
      * 保存 bitmap 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的 bitmap 数据
-     * @param saveTime
-     *            保存的时间，单位：秒
+     *
+     * @param key      保存的key
+     * @param value    保存的 bitmap 数据
+     * @param saveTime 保存的时间，单位：秒
      */
     public void put(String key, Bitmap value, int saveTime) {
         put(key, Utils.Bitmap2Bytes(value), saveTime);
@@ -515,7 +487,7 @@ public class ChuMuAppACache {
 
     /**
      * 读取 bitmap 数据
-     * 
+     *
      * @param key
      * @return bitmap 数据
      */
@@ -529,13 +501,12 @@ public class ChuMuAppACache {
     // =======================================
     // ============= drawable 数据 读写 =============
     // =======================================
+
     /**
      * 保存 drawable 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的drawable数据
+     *
+     * @param key   保存的key
+     * @param value 保存的drawable数据
      */
     public void put(String key, Drawable value) {
         put(key, Utils.drawable2Bitmap(value));
@@ -543,13 +514,10 @@ public class ChuMuAppACache {
 
     /**
      * 保存 drawable 到 缓存中
-     * 
-     * @param key
-     *            保存的key
-     * @param value
-     *            保存的 drawable 数据
-     * @param saveTime
-     *            保存的时间，单位：秒
+     *
+     * @param key      保存的key
+     * @param value    保存的 drawable 数据
+     * @param saveTime 保存的时间，单位：秒
      */
     public void put(String key, Drawable value, int saveTime) {
         put(key, Utils.drawable2Bitmap(value), saveTime);
@@ -557,7 +525,7 @@ public class ChuMuAppACache {
 
     /**
      * 读取 Drawable 数据
-     * 
+     *
      * @param key
      * @return Drawable 数据
      */
@@ -570,7 +538,7 @@ public class ChuMuAppACache {
 
     /**
      * 获取缓存文件
-     * 
+     *
      * @param key
      * @return value 缓存的文件
      */
@@ -583,7 +551,7 @@ public class ChuMuAppACache {
 
     /**
      * 移除某个key
-     * 
+     *
      * @param key
      * @return 是否移除成功
      */
@@ -599,8 +567,8 @@ public class ChuMuAppACache {
     }
 
     /**
-     * @title 缓存管理器
      * @version 1.0
+     * @title 缓存管理器
      */
     public class ACacheManager {
         private final AtomicLong cacheSize;
@@ -698,7 +666,7 @@ public class ChuMuAppACache {
 
         /**
          * 移除旧的文件
-         * 
+         *
          * @return
          */
         private long removeNext() {
@@ -737,14 +705,14 @@ public class ChuMuAppACache {
     }
 
     /**
-     * @title 时间计算工具类
      * @version 1.0
+     * @title 时间计算工具类
      */
     private static class Utils {
 
         /**
          * 判断缓存的String数据是否到期
-         * 
+         *
          * @param str
          * @return true：到期了 false：还没有到期
          */
@@ -754,7 +722,7 @@ public class ChuMuAppACache {
 
         /**
          * 判断缓存的byte数据是否到期
-         * 
+         *
          * @param data
          * @return true：到期了 false：还没有到期
          */
@@ -813,7 +781,7 @@ public class ChuMuAppACache {
                 String saveDate = new String(copyOfRange(data, 0, 13));
                 String deleteAfter = new String(copyOfRange(data, 14,
                         indexOf(data, mSeparator)));
-                return new String[] { saveDate, deleteAfter };
+                return new String[]{saveDate, deleteAfter};
             }
             return null;
         }

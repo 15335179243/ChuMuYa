@@ -9,7 +9,7 @@ import com.chumu.dt.v24.magicbox.klog.ChuMuKLog;
  * @date: 2017年05月04日 14:13
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.2-beta
+ * @version: 2.0.3-beta
  */
 public class ChuMuAppLogMessageManager {
     //是否输出

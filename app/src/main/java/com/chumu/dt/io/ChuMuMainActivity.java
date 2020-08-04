@@ -5,7 +5,10 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.chumu.dt.v24.magicbox.swipeback.ChuMuSwipeBack;
+
 @Deprecated
+@ChuMuSwipeBack(true)
 public  class ChuMuMainActivity extends AppCompatActivity {
 
     @Override

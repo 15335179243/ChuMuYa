@@ -33,7 +33,7 @@ import java.util.TimerTask;
  * @date: 2019年07月6日 15:51
  * @Copyright: 个人版权所有
  * @Company:
- * @version: 2.0.2-beta
+ * * @version: 2.0.3-beta
  * @use TimeRefresher.getInstance().addTimeRefreshListener(...);
  * 在使用TimeRefresher的Context被销毁前TimeRefresher.getInstance().removeTimeRefreshListener(...);
  * 在应用退出前TimeRefresher.getInstance().finish();

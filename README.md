@@ -6,6 +6,9 @@ This is Chumu's code base. Welcome to this place. It's a great honor to serve yo
 
 ​                                                          [![](https://img.shields.io/badge/CSDN-%E6%A5%9A%E6%9C%A8-green)](https://blog.csdn.net/qq_44729989)        [![](https://img.shields.io/badge/jitpack-2.0.2--beta-orange)](https://github.com/15335179243/ChuMuYa/releases/tag/v11-2.0.2-beta)
 
+
+### 最新更新[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/README.md#v11-203%E6%9B%B4%E6%96%B0)
+
 Add it in your root build.gradle at the end of repositories:
 
 ```java
@@ -22,7 +25,7 @@ Step 2. Add the dependency
 ```java
 dependencies {
 
-        implementation 'com.github.15335179243:ChuMuYa:v11-2.0.2-beta'
+        implementation 'com.github.15335179243:ChuMuYa:v11-2.0.3-beta'
 }
 ```
 
@@ -186,6 +189,16 @@ tv.setsetTextColor(ChuMuRandomColor.onRandomCOlor());
 
 
 ## ChuMuTimeRefresher(时间刷新器，方便进行定时请求，或者定时做某些事情) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/ChuMuTimeRefresher.java)
+
+
+# v11-2.0.3更新
+
+## ChuMuSwipeBack(增加侧滑返回) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/swipeback/SwipeBack.md)
+
+## ChuMuPermission和ChuMuPermissionTools(动态权限获取框架) →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/appbox/AppBox.md#获取动态权限工具类--ChuMuPermission)
+
+
+
 
 
 ### 开源协议许可证

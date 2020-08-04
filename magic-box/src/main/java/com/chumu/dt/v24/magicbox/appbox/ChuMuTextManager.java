@@ -43,7 +43,7 @@ import static android.graphics.BlurMaskFilter.Blur;
  * @date: 2018年06月24日 15:31
  * @Copyright: 个人版权所有
  * @Company:
- @version: 2.0.2-beta
+ * @version: 2.0.3-beta
  */
 
 public class ChuMuTextManager {
