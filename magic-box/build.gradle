@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.username'
+apply plugin: 'com.novoda.bintray-release'//添加 bintray-release 配置
 android {
     compileSdkVersion 29
     defaultConfig {
@@ -30,11 +31,22 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'pub.devrel:easypermissions:2.0.1'
+    api 'pub.devrel:easypermissions:2.0.1'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation files('libs/BASE64Decoder.jar')
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+publish {
+    userOrg = '1970874029'//bintray.com用户名
+    repoName = 'ChuMuMagicBox'   // bintray上仓库的名字
+    groupId = 'com.chumu.magic-box'//jcenter上的路径
+    artifactId = 'ChuMuMagicBox'//项目名称
+    publishVersion = 'v11-2.0.0'//版本号
+    desc = '\t\n' +
+            'Chumu rapid development kit, our service purpose is to make the world no difficult to develop the application.（楚木快速开发工具包，我们的服务宗旨是，让天下没有难开发的应。）'// 描述
+    website = 'https://github.com/15335179243/ChuMuYa'//一般填github 项目地址,一定是要有效的地址
 }
 repositories {
     mavenCentral()
