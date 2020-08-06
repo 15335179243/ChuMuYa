@@ -27,4 +27,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':magic-box')
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-rc1'
+    implementation 'com.sunfusheng:MarqueeView:1.4.1'
 }
