@@ -9,6 +9,17 @@ This is Chumu's code base. Welcome to this place. It's a great honor to serve yo
 
 ### 最新更新[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/README.md#v11-203%E6%9B%B4%E6%96%B0)
 
+### maven
+
+```java
+dependencies {
+
+    implementation 'com.chumu.magic-box:ChuMuMagicBox:v11-2.0.0'
+}
+```
+
+
+
 Add it in your root build.gradle at the end of repositories:
 
 ```java
