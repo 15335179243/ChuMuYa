@@ -2,6 +2,7 @@ package com.chumu.dt.v24.magicbox.base;
 
 import android.os.Bundle;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.chumu.dt.v24.magicbox.swipeback.ChuMuSwipeBack;
