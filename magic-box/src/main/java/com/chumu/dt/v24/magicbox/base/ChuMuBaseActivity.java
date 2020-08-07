@@ -23,7 +23,7 @@ import com.chumu.dt.v24.magicbox.swipeback.util.SwipeBackUtil;
  */
 
 
-public abstract class ChuMuBaseActivity extends AppCompatActivity implements SwipeBackActivityBase {
+public class ChuMuBaseActivity extends AppCompatActivity implements SwipeBackActivityBase {
 
     private SwipeBackActivityHelper mHelper;
 
@@ -40,7 +40,6 @@ public abstract class ChuMuBaseActivity extends AppCompatActivity implements Swi
 
     }
     @Override
-    @Deprecated
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mHelper = new SwipeBackActivityHelper(this);
