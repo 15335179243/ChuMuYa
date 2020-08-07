@@ -9,9 +9,9 @@ import javax.crypto.spec.SecretKeySpec;
  * @Description:主要功能:DES对称加密（Data Encryption Standard，数据加密标准，对称加密算法）
  * @Prject: magic-box
  * @date: 2017年05月16日 15:56
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChuMuDESUtils {

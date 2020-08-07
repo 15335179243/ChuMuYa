@@ -13,9 +13,9 @@ import java.security.NoSuchAlgorithmException;
  * @Description:主要功能:AES对称加密（Advanced Encryption Standard，高级数据加密标准，AES算法可以有效抵制针对DES的攻击算法，对称加密算法）
  * @Prject: magic-box
  * @date: 2017年05月16日 15:54
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChuMuAESUtils {

@@ -7,7 +7,7 @@ package com.chumu.dt.v24.magicbox.swipeback.util;
  * Copyright © 2020年 ChuMu. All rights reserved.
  * <p>
  * Describe: 侧滑返回
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 public interface SwipeBackActivityBase {
     /**

@@ -6,9 +6,9 @@ import android.os.Build;
  * @Description:主要功能:andoid 版本工具，用于判断当前版本是否大于某个版本
  * @Prject: magic-box
  * @date: 2019年07月20日 10:33
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChumuVersionUtil {

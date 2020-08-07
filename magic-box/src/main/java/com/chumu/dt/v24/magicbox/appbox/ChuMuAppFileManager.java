@@ -37,9 +37,9 @@ import Decoder.BASE64Encoder;
  * @Prject: magic-box
  * @author: ChuMuYa
  * @date: 2017年05月04日 14:13
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 @SuppressWarnings("resource")
 public class ChuMuAppFileManager {

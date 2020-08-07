@@ -14,9 +14,9 @@ import java.security.NoSuchAlgorithmException;
  * @Description:主要功能:MD5加密 不可逆（Message Digest，消息摘要算法）
  * @Prject: magic-box
  * @date: 2017年05月16日 15:56
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChuMuMD5Utils {

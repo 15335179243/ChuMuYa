@@ -11,9 +11,9 @@ import java.util.zip.ZipOutputStream;
  * @Description:主要功能: 实现的Zip工具
  *  @Prject: magic-box
  * @date: 2017年05月24日 18:21
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChuMuZipUtil {

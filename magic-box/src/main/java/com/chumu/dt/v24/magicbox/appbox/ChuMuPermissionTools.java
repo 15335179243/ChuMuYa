@@ -22,9 +22,9 @@ import java.util.List;
  * @Description:主要功能: 跳转权限设置界面
  *  @Prject: magic-box
  * @date: 2019年08月14日 14:32
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 public class ChuMuPermissionTools {
     private final String TAG = "PermissionPageManager";

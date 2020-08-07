@@ -14,9 +14,9 @@ import java.text.DecimalFormat;
  *
  * @Prject: magic-box
  * @date: 2019年05月03日 16:37
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 @SuppressLint("SdCardPath")
 public class ChuMuAppCleanManager {

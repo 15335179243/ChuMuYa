@@ -4,9 +4,9 @@ package com.chumu.dt.v24.magicbox.encryption;
  * @Description:主要功能: 类型转换类
  * @Prject: magic-box
  * @date: 2017年05月16日 15:26
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChuMuConvertUtils {

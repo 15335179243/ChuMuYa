@@ -10,9 +10,9 @@ import java.security.NoSuchAlgorithmException;
  * @Description:主要功能:3DES对称加密（Triple DES、DESede，进行了三重DES加密的算法，对称加密算法）
  * @Prject: magic-box
  * @date: 2017年05月16日 15:58
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChuMuTripleDESUtils {

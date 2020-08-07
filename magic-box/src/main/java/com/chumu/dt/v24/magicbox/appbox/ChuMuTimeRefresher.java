@@ -31,9 +31,9 @@ import java.util.TimerTask;
  * @Description:主要功能: 时间刷新器（计时器）
  * @Prject: magic-box
  * @date: 2019年07月6日 15:51
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * * @version: 2.0.3-beta
+ * * @version: v11-2.0.4-beta
  * @use TimeRefresher.getInstance().addTimeRefreshListener(...);
  * 在使用TimeRefresher的Context被销毁前TimeRefresher.getInstance().removeTimeRefreshListener(...);
  * 在应用退出前TimeRefresher.getInstance().finish();

@@ -18,9 +18,9 @@ import java.util.regex.Pattern;
  * @Package: com.chumu.dt.v24.magicbox.appbox
  * @author: ChuMuYa
  * @date: 2017年05月04日 14:13
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 @SuppressLint("SimpleDateFormat")
 public class ChuMuAppSysDateManager {

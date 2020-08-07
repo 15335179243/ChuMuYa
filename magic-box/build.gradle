@@ -16,7 +16,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -46,7 +46,7 @@ publish {
     repoName = 'ChuMuMagicBox'   // bintray上仓库的名字
     groupId = 'com.chumu.magic-box'//jcenter上的路径
     artifactId = 'ChuMuMagicBox'//项目名称
-    publishVersion = 'v11-2.0.0'//版本号
+    publishVersion = 'v11-2.0.2'//版本号
     desc = '\t\n' +
             'Chumu rapid development kit, our service purpose is to make the world no difficult to develop the application.（楚木快速开发工具包，我们的服务宗旨是，让天下没有难开发的应。）'// 描述
     website = 'https://github.com/15335179243/ChuMuYa'//一般填github 项目地址,一定是要有效的地址

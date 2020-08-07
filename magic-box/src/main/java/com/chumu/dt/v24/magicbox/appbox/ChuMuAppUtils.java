@@ -10,9 +10,9 @@ import com.chumu.dt.v24.magicbox.klog.ChuMuKLogUtil;
  * @Description:主要功能:初始化在application中获取context
  *  @Prject: magic-box
  * @date: 2017年05月19日 14:09
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChuMuAppUtils {

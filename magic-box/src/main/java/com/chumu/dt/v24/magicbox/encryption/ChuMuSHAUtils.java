@@ -7,9 +7,9 @@ import java.security.NoSuchAlgorithmException;
  * @Description:主要功能:SHA-1 加密 不可逆（Secure Hash Algorithm，安全散列算法）
  * @Prject: magic-box
  * @date: 2017年05月16日 15:57
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChuMuSHAUtils {

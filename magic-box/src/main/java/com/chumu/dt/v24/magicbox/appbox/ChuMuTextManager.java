@@ -41,9 +41,9 @@ import static android.graphics.BlurMaskFilter.Blur;
 // * @Description:主要功能: textView复杂文本样式设置
  *  @Prject: magic-box
  * @date: 2018年06月24日 15:31
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChuMuTextManager {

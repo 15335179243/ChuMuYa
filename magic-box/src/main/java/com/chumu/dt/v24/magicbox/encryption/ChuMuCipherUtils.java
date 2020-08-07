@@ -15,9 +15,9 @@ import java.security.NoSuchAlgorithmException;
  * @Description:主要功能:加密工具类
  * @Prject: magic-box
  * @date: 2017年06月02日 10:05
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * @version: 2.0.3-beta
+ * @version: v11-2.0.4-beta
  */
 
 public class ChuMuCipherUtils {

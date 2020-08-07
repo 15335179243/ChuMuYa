@@ -29,9 +29,9 @@ import java.util.Locale;
  * @Description:主要功能: 相机相册工具
  * @Prject: magic-box
  * @date: 2018年05月24日 18:21
- * @Copyright: 个人版权所有
+ * @Copyright: 共有开源知识版权
  * @Company:
- * * @version: 2.0.3-beta
+ * * @version: v11-2.0.4-beta
  */
 public class ChuMuPhotoManager {
     public static final int GET_IMAGE_BY_CAMERA = 5001;
