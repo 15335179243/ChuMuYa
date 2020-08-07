@@ -1,9 +1,7 @@
 package com.chumu.dt.v24.magicbox.base;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.chumu.dt.v24.magicbox.swipeback.ChuMuSwipeBack;

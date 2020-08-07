@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
@@ -28,4 +30,5 @@ dependencies {
     implementation project(path: ':magic-box')
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-rc1'
 //    implementation 'com.sunfusheng:MarqueeView:1.4.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
