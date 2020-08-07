@@ -28,7 +28,7 @@ public class ChuMuBaseActivity extends AppCompatActivity implements SwipeBackAct
     //加载注解设置
     private void initAttributes() {
         ChuMuSwipeBack chuMuSwipeBack = getClass().getAnnotation(ChuMuSwipeBack.class);
-        mHelper.onActivityCreate();
+
         if (chuMuSwipeBack != null) {
             setSwipeBackEnable(chuMuSwipeBack.value());
         } else {
@@ -41,6 +41,7 @@ public class ChuMuBaseActivity extends AppCompatActivity implements SwipeBackAct
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mHelper = new SwipeBackActivityHelper(this);
+        mHelper.onActivityCreate();
         initAttributes();
 
     }
