@@ -14,4 +14,26 @@
     </declare-styleable>
 
     <attr name="SwipeBackLayoutStyle" format="reference"/>
+
+    <declare-styleable name="ChuMuMarqueeViewStyle">
+        <attr name="chuMuInterval" format="integer|reference"/>
+        <attr name="chuMuAnimDuration" format="integer|reference"/>
+        <attr name="chuMuTextSize" format="dimension|reference"/>
+        <attr name="chuMuTextColor" format="color|reference"/>
+        <attr name="chuMuSingleLine" format="boolean"/>
+        <attr name="chuMuFont" format="reference"/>
+        <attr name="chuMuGravity">
+            <enum name="start" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="end" value="2"/>
+            <enum name="top" value="3"/>
+            <enum name="bottom" value="4"/>
+        </attr>
+        <attr name="chuMuDirection">
+            <enum name="bottom_to_top" value="0"/>
+            <enum name="top_to_bottom" value="1"/>
+            <enum name="right_to_left" value="2"/>
+            <enum name="left_to_right" value="3"/>
+        </attr>
+    </declare-styleable>
 </resources>

@@ -1,10 +1,7 @@
 package com.chumu.dt.io;
 
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-
 
 import com.chumu.dt.v24.magicbox.base.ChuMuBaseActivity;
 import com.chumu.dt.v24.magicbox.swipeback.ChuMuSwipeBack;

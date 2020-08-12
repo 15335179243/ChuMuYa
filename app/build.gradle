@@ -6,6 +6,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.chumu.dt.io"
+//        applicationId "adb uninstall com.chumu.dt.io"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1

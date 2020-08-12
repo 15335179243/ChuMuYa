@@ -40,10 +40,15 @@ dependencies {
 }
 ```
 
-## usag 这边给大家简单演示一下具体使用请看代码
 
 
-##
+## 集成方式
+```java
+//在你的Application里面初始化函数
+   ChuMuAppUtils.init(context);
+```
+
+## 动态权限  usag 这边给大家简单演示一下具体使用请看代码
 
 ```java
 //初始化你的动态权限(Initialize your dynamic permissions)

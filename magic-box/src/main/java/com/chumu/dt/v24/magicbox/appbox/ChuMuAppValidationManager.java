@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -136,8 +137,14 @@ public class ChuMuAppValidationManager {
         }
         	return true;
     }
- 
-    
+
+
+	public static <T> boolean isEmpty(List<T> list) {
+		if (list == null || list.size() == 0) {
+			return true;
+		}
+		return false;
+	}
 	/**
 	 * 是否不为空
 	 * @param s
