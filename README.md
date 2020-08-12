@@ -217,7 +217,7 @@ tv.setsetTextColor(ChuMuRandomColor.onRandomCOlor());
 
 # v11-2.0.4更新
 
-## 修复混淆，然后发布带来的bug，包括一些已知的bug
+## 修复混淆带来的bug，包括一些已知的bug
 
 
 ### 开源协议许可证
