@@ -113,7 +113,7 @@ dependencies {
 
 # v11-2.0.5更新
 
-## 增加自定义控件 旋转木马ChuMuCarouseView →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#ChuMuCarouseView)
+## 增加自定义控件 旋转木马ChuMuCarouseView →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#ChuMuCarouseView-点击查看)
 **（解决类似于公告滚动字体类活动）**
 
 ### 开源协议许可证
