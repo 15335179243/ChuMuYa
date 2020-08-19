@@ -8,7 +8,7 @@ import android.os.Build;
  * @date: 2019年07月20日 10:33
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.4-beta
+ * @version: v11-2.0.5-beta
  */
 
 public class ChumuVersionUtil {

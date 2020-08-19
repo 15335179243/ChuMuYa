@@ -27,7 +27,7 @@ import javax.crypto.Cipher;
  * @date: 2017年07月20日 16:26
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.4-beta
+ * @version: v11-2.0.5-beta
  */
 
 public class ChuMuRSAUtils {

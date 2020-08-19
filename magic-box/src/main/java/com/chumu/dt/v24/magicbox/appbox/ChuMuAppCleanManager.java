@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
  * @date: 2019年05月03日 16:37
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.4-beta
+ * @version: v11-2.0.5-beta
  */
 @SuppressLint("SdCardPath")
 public class ChuMuAppCleanManager {

@@ -31,7 +31,7 @@ import java.util.Locale;
  * @date: 2018年05月24日 18:21
  * @Copyright: 共有开源知识版权
  * @Company:
- * * @version: v11-2.0.4-beta
+ * @version: v11-2.0.5-beta
  */
 public class ChuMuPhotoManager {
     public static final int GET_IMAGE_BY_CAMERA = 5001;

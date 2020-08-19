@@ -13,7 +13,7 @@ import com.chumu.dt.v24.magicbox.klog.ChuMuKLogUtil;
  * @date: 2017年05月19日 14:09
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.4-beta
+ * @version: v11-2.0.5-beta
  */
 
 public class ChuMuAppUtils extends Application {

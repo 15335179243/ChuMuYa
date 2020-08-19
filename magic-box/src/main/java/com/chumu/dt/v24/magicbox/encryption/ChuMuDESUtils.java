@@ -11,7 +11,7 @@ import javax.crypto.spec.SecretKeySpec;
  * @date: 2017年05月16日 15:56
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.4-beta
+ * @version: v11-2.0.5-beta
  */
 
 public class ChuMuDESUtils {

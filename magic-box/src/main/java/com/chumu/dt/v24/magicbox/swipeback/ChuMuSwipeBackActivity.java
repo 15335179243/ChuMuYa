@@ -19,7 +19,7 @@ import com.chumu.dt.v24.magicbox.swipeback.util.SwipeBackUtil;
  * <p>
  * Describe: 侧滑返回
  *
- * @version: v11-2.0.4-beta
+ * @version: v11-2.0.5-beta
  */
 public class ChuMuSwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase {
     private SwipeBackActivityHelper mHelper;

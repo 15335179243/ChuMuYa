@@ -17,7 +17,7 @@ import com.chumu.dt.v24.magicbox.R;
  * Copyright © 2020年 ChuMu. All rights reserved.
  * <p>
  * Describe: 侧滑返回
- * @version: v11-2.0.4-beta
+ * @version: v11-2.0.5-beta
  */
 public class SwipeBackActivityHelper {
     private Activity mActivity;

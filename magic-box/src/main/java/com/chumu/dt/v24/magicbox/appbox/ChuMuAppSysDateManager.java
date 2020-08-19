@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
  * @date: 2017年05月04日 14:13
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.4-beta
+ * @version: v11-2.0.5-beta
  */
 @SuppressLint("SimpleDateFormat")
 public class ChuMuAppSysDateManager {
