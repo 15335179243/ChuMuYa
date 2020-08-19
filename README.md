@@ -63,117 +63,9 @@ dependencies {
 
 ### v11-1.0.4更新
 
-**添加粘性头布局和流势布局还有随机颜色**
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190622173728256.gif)
-由于为了大家的开发效率着想,我把这个已经打包成了依赖,大家只需要导我第三方依赖
-
-## 粘性头布局:
-
-#### Activity里面集成代码:
-
-- **分组头部**
-
-```java
-ChuMuNormalDecoration decoration = new ChuMuNormalDecoration() {
-            @Override
-            public String getHeaderName(int pos) {
-                return //返回每个分组头部名称;
-            }
-        };
-```
-
-- **自定义头部/悬浮头部layout【自定义头部加载图片请用 loadImage() 方法】**
-
-```java
-    decoration.setOnDecorationHeadDraw(new ChuMuNormalDecoration.OnDecorationHeadDraw() {
-           @Override
-           public View getHeaderView(int pos) {
-               return //返回自定义头部view;
-           }
-       });
-```
-
-- **头部点击事件**
-
-```java
-decoration.setOnHeaderClickListener(new ChuMuNormalDecoration.OnHeaderClickListener() {
-         @Override
-         public void headerClick(int pos) {
-         }
-     });
-```
-
-**注:**
-GridLayoutManager请配合GridDecoration使用。
-
-###### 方法及属性介绍
-
-------
-
-| name                  | format                   | 中文解释                                                 |
-| --------------------- | ------------------------ | -------------------------------------------------------- |
-| setHeaderHeight       | integer                  | 分组头部高度                                             |
-| setTextPaddingLeft    | integer                  | 普通分组头部【只含文字】文字左边距                       |
-| setTextSize           | integer                  | 普通分组头部【只含文字】文字大小                         |
-| setTextColor          | integer                  | 普通分组头部【只含文字】文字颜色                         |
-| setHeaderContentColor | integer                  | 普通分组头部【只含文字】文字背景颜色                     |
-| onDestory             |                          | 清空数据集合/监听等                                      |
-| *loadImage            | String,integer,ImageView | 用来加载并刷新图片到分组头部【自定义头部很重要的方法！】 |
-
-## 流势布局
-
-效果上如图,如果内容过长,流式布局可以实现自动换行
-1.使用
-
-```java
-<com.chumu.dt.v24.permissions.wiget.ChuMuFlowLayout
-    android:id="@+id/flow"
-    android:paddingTop="12dp"
-    android:paddingBottom="12dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
-```
-
-```java
-for (int i = 0; i < list.size(); i++) {
-                //获取视图,视图可以自定义,可以添加自己想要的效果
-                TextView label = (TextView) View.inflate(mContext, R.layout.item_label, null);
-                //获取数据
-                final String data = list.get(i);
-                //绑定数据
-                label.setText(data);
-                label.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        showToast(data);
-                    }
-                });
-                //加到容器中,parent是FlowLayout
-                parent.addView(label);
-            }
-
-```
-
-为了方便大家的集成下面的代码我已经写到了源码里面,大家可以进去源码拷贝
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190622181850718.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0NzI5OTg5,size_16,color_FFFFFF,t_70)
-
-### 五彩斑斓的字体我打包在依赖里面了代码如下:
-
-```java
-//大家只需要调用依赖里面的一个随机颜色的方法就可以了
-TextView tv;
-tv.setsetTextColor(ChuMuRandomColor.onRandomCOlor());
-```
-
-详情这边有csdn博客:https://blog.csdn.net/qq_44729989/article/details/93343258
-
-
+**添加粘性头布局和流势布局还有随机颜色**  → [点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md)
 
 # v11-2.0.0更新
-
-
-
 ## 可以替换EventBus的一款通信框架(基于LiveData实现事件总线)→[ChuMuLiveDataBus](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/livedatabus/LiveDataBus.md)
 
 #####
@@ -219,6 +111,10 @@ tv.setsetTextColor(ChuMuRandomColor.onRandomCOlor());
 
 ## 修复混淆带来的bug，包括一些已知的bug
 
+# v11-2.0.5更新
+
+## 增加自定义控件 旋转木马ChuMuCarouseView →[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#ChuMuCarouseView)
+**（解决类似于公告滚动字体类活动）**
 
 ### 开源协议许可证
 ```css

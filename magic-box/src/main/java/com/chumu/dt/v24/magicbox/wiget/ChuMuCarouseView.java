@@ -23,10 +23,12 @@ import com.chumu.dt.v24.magicbox.appbox.ChuMuAppValidationManager;
 import com.chumu.dt.v24.magicbox.appbox.ChuMuDisplayUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
 /**
  * @Description:常用的公告样式，轮循Text，旋转木马
- *  @Prject: magic-box
+ * @Prject: magic-box
  * @date: 2020年07月28日 14:09
  * @Copyright: 共有开源知识版权
  * @Company:
@@ -170,7 +172,7 @@ public class ChuMuCarouseView extends ViewFlipper {
     }
 
     /**
-     * 根据字符串和宽度，启动翻页公告
+     * 根据字符串里面空格，启动翻页公告
      *
      * @param message 字符串
      */
@@ -180,19 +182,9 @@ public class ChuMuCarouseView extends ViewFlipper {
         if (width == 0) {
             throw new RuntimeException("Please set the width of MarqueeView !");
         }
-        int limit = width / textSize;
-        List<String> list = new ArrayList<>();
 
-        if (messageLength <= limit) {
-            list.add(message);
-        } else {
-            int size = messageLength / limit + (messageLength % limit != 0 ? 1 : 0);
-            for (int i = 0; i < size; i++) {
-                int startIndex = i * limit;
-                int endIndex = (Math.min((i + 1) * limit, messageLength));
-                list.add(message.substring(startIndex, endIndex));
-            }
-        }
+        String[] sizes = message.split(" ");
+        List<String> list = new ArrayList<>(Arrays.asList(sizes));
 
         if (messages == null) {
             messages = new ArrayList<>();

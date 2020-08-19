@@ -27,19 +27,19 @@ import androidx.annotation.Nullable;
 /**
  * This is a ChuMuKLog tool，with this you can the following
  * <ol>
- * <li>use ChuMuKChuMuKLog.d(),you could print whether the method execute,and the default tag is current class's name</li>
- * <li>use ChuMuKChuMuKLog.d(msg),you could print ChuMuKLog as before,and you could location the method with a click in Android Studio ChuMuKLogcat</li>
- * <li>use ChuMuKChuMuKLog.json(),you could print json string with well format automatic</li>
+ * <li>use {@link ChuMuKLog#d()},you could print whether the method execute,and the default tag is current class's name</li>
+ * <li>use{@link ChuMuKLog#d(Object)},you could print ChuMuKLog as before,and you could location the method with a click in Android Studio ChuMuKLogcat</li>
+ * <li>use {@link ChuMuKLog#json(String)},you could print json string with well format automatic</li>
  * </ol>
- *
- *         github https://github.com/ZhaoKaiQiang/KChuMuKLog
+ * <p>
+ *        github https://github.com/ZhaoKaiQiang/KLog
  *         15/11/17 扩展功能，添加对文件的支持
  *         15/11/18 扩展功能，增加对XML的支持，修复BUG
  *         15/12/8  扩展功能，添加对任意参数的支持
  *         15/12/11 扩展功能，增加对无限长字符串支持
  *         16/6/13  扩展功能，添加对自定义全局Tag的支持,修复内部类不能点击跳转的BUG
- *         16/6/15  扩展功能，添加不能关闭的KChuMuKLog.debug(),用于发布版本的ChuMuKLog打印,优化部分代码
- *         16/6/20  扩展功能，添加堆栈跟踪功能KChuMuKLog.trace()
+ *         16/6/15  扩展功能，添加不能关闭的{@link ChuMuKLog#debug()},用于发布版本的{@link ChuMuKLog}打印,优化部分代码
+ *         16/6/20  扩展功能，添加堆栈跟踪功能 {@link ChuMuKLog#trace()}
  */
 public class ChuMuKLog {
 

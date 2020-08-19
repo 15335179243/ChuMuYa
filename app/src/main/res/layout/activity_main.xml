@@ -15,6 +15,7 @@
 <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:chumu="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/motionLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -35,5 +36,30 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         chumu:layout_constraintTop_toTopOf="parent" />
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+
+  </LinearLayout>
+
+
+    <com.chumu.dt.v24.magicbox.wiget.ChuMuFlowLayout
+        android:layout_width="409dp"
+        android:layout_height="276dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="65dp">
+
+    </com.chumu.dt.v24.magicbox.wiget.ChuMuFlowLayout>
+
+    <com.chumu.dt.v24.magicbox.wiget.ChuMuCarouseView
+        android:id="@+id/carouseView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:chuMuAnimDuration="1000"
+        app:chuMuDirection="bottom_to_top"
+        app:chuMuInterval="1000"
+        app:chuMuTextColor="#ff3333"
+        app:chuMuTextSize="14sp"
+        app:chuMuSingleLine="true"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

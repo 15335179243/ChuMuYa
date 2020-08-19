@@ -19,6 +19,27 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-optimizationpasses 5
+# 指定不去忽略非公共的库的类的成员
+-dontskipnonpubliclibraryclassmembers
+# 指定混淆是采用的算法
+-optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
+# 指定外部模糊字典 proguard-chinese.txt 改为混淆文件名，下同
+-obfuscationdictionary proguard-socialism.txt
+# 指定class模糊字典
+-classobfuscationdictionary proguard-socialism.txt
+# 指定package模糊字典
+-packageobfuscationdictionary proguard-socialism.txt
+
+
+-keep class com.chumu.dt.v24.magicbox.** { **; }
 -keep class com.chumu.dt.v24.magicbox.** { *; }
+-keep class com.chumu.dt.v24.magicbox.** {  public *;
+ }
 -keepclassmembers class com.chumu.dt.v24.magicbox.** { *; }
 -dontwarn com.chumu.dt.v24.magicbox.**
+-keep public class * extends android.app.Activity
+-keep class * implements Android.os.Parcelable { # 保持Parcelable不被混淆
+    public static final Android.os.Parcelable$Creator *;
+}

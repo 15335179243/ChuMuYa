@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.chumu.dt.v24.magicbox.appbox.GlobalCrashCapture;
+import com.chumu.dt.v24.magicbox.appbox.NotSingOnEvent;
 import com.chumu.dt.v24.magicbox.swipeback.ChuMuSwipeBack;
 import com.chumu.dt.v24.magicbox.swipeback.util.SwipeBackActivityBase;
 import com.chumu.dt.v24.magicbox.swipeback.util.SwipeBackActivityHelper;
@@ -22,7 +24,7 @@ import com.chumu.dt.v24.magicbox.swipeback.util.SwipeBackUtil;
  */
 
 
-public class ChuMuBaseActivity extends AppCompatActivity implements SwipeBackActivityBase {
+public class ChuMuBaseActivity extends AppCompatActivity implements SwipeBackActivityBase, NotSingOnEvent {
 
     private SwipeBackActivityHelper mHelper;
 
@@ -44,6 +46,7 @@ public class ChuMuBaseActivity extends AppCompatActivity implements SwipeBackAct
         mHelper = new SwipeBackActivityHelper(this);
         mHelper.onActivityCreate();
         initAttributes();
+        GlobalCrashCapture.onNotSignEvent(this);
 
     }
     @Override
@@ -70,4 +73,9 @@ public class ChuMuBaseActivity extends AppCompatActivity implements SwipeBackAct
     }
 
 
+    @Override
+    public void onSingEvent() {
+        //做你的处理未登录操作
+
+    }
 }
