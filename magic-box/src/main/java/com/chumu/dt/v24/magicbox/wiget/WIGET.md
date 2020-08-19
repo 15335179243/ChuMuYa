@@ -1,6 +1,6 @@
 # 目录
 ## -----------------------------------------------[粘性头布局](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#粘性头布局-点击查看)
-## -----------------------------------------------[流势布局](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#流势布局-点击查看)
+## -----------------------------------------------[流势布局](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#流势布局--点击查看)
 ## -----------------------------------------------[五彩斑斓的字体](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#五彩斑斓的字体我打包在依赖里面了代码如下)
 ## -----------------------------------------------[旋转木马ChuMuCarouseView](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#ChuMuCarouseView-点击查看)
 
