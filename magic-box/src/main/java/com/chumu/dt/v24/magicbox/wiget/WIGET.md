@@ -1,8 +1,8 @@
 # 目录
-## -----------------------------------------------[粘性头布局](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#粘性头布局)
-## -----------------------------------------------[流势布局](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#流势布局)
+## -----------------------------------------------[粘性头布局](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#粘性头布局-点击查看)
+## -----------------------------------------------[流势布局](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#流势布局--点击查看)
 ## -----------------------------------------------[五彩斑斓的字体](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#五彩斑斓的字体我打包在依赖里面了代码如下)
-## -----------------------------------------------[旋转木马ChuMuCarouseView](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#ChuMuCarouseView)
+## -----------------------------------------------[旋转木马ChuMuCarouseView](https://github.com/15335179243/ChuMuYa/blob/master/magic-box/src/main/java/com/chumu/dt/v24/magicbox/wiget/WIGET.md#ChuMuCarouseView-点击查看)
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190622173728256.gif)
 由于为了大家的开发效率着想,我把这个已经打包成了依赖,大家只需要导我第三方依赖
