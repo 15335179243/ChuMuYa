@@ -33,6 +33,20 @@
 -packageobfuscationdictionary proguard-socialism.txt
 
 
+-optimizationpasses 5   # 设置混淆的压缩比率 0 ~ 7
+-dontusemixedcaseclassnames  # 混淆时不使用大小写混合，混淆后的类名为小写
+-dontskipnonpubliclibraryclasses # 指定不去忽略非公共库的类
+-dontskipnonpubliclibraryclassmembers # 指定不去忽略非公共库的成员
+-dontpreverify          # 混淆时不做预校验
+-verbose                # 混淆时不记录日志
+-ignorewarning          # 忽略警告
+-dontshrink             # 代码优化
+-dontoptimize           # 不优化输入的类文件
+-keepattributes Signature       # 避免混淆泛型
+-keepattributes SourceFile,LineNumberTable  # 保留
+
+#Android 的注释不能混淆
+ -keepattributes *Annotation*
 -keep class com.chumu.dt.v24.magicbox.** { **; }
 -keep class com.chumu.dt.v24.magicbox.** { *; }
 -keep class com.chumu.dt.v24.magicbox.** {  public *;
