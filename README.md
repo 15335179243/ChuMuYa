@@ -4,7 +4,7 @@ This is Chumu's code base. Welcome to this place. It's a great honor to serve yo
 
 #### 最近新开了一个团队，本项目以后就进行团队维护了，但每次发板的，还是由这边先发，需要抢先体验的就看这边，需要稳定版本的可以→[点击查看](https://github.com/ChuMuYa/ChuMuYa)
 
-​                                                          [![](https://img.shields.io/badge/CSDN-%E6%A5%9A%E6%9C%A8-green)](https://blog.csdn.net/qq_44729989)        [![](https://img.shields.io/badge/jitpack-2.0.5--beta-orange)](https://github.com/15335179243/ChuMuYa/releases/tag/v11-2.0.5-beta)			[ ![Download](https://api.bintray.com/packages/1970874029/ChuMuMagicBox/ChuMuMagicBox/images/download.svg?version=v11-2.0.0) ](https://bintray.com/1970874029/ChuMuMagicBox/ChuMuMagicBox/v11-2.0.0/link)
+​                                                          [![](https://img.shields.io/badge/CSDN-%E6%A5%9A%E6%9C%A8-green)](https://blog.csdn.net/qq_44729989)        [![](https://img.shields.io/badge/jitpack-2.0.5--beta-orange)](https://github.com/15335179243/ChuMuYa/releases/tag/v11-2.0.6-beta)			[ ![Download](https://api.bintray.com/packages/1970874029/ChuMuMagicBox/ChuMuMagicBox/images/download.svg?version=v11-2.0.0) ](https://bintray.com/1970874029/ChuMuMagicBox/ChuMuMagicBox/v11-2.0.0/link)
 
 
 ### 最新更新[点击查看](https://github.com/15335179243/ChuMuYa/blob/master/README.md#v11-203%E6%9B%B4%E6%96%B0)
@@ -36,7 +36,7 @@ Step 2. Add the dependency
 ```java
 dependencies {
 
-        implementation 'com.github.15335179243:ChuMuYa:v11-2.0.5-beta'
+        implementation 'com.github.15335179243:ChuMuYa:v11-2.0.6-beta'
 }
 ```
 
