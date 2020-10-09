@@ -17,7 +17,7 @@ import java.security.NoSuchAlgorithmException;
  * @date: 2017年06月02日 10:05
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.5-beta
+ * @version: v11-2.0.6-beta
  */
 
 public class ChuMuCipherUtils {

@@ -39,7 +39,7 @@ import Decoder.BASE64Encoder;
  * @date: 2017年05月04日 14:13
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.5-beta
+ * @version: v11-2.0.6-beta
  */
 @SuppressWarnings("resource")
 public class ChuMuAppFileManager {

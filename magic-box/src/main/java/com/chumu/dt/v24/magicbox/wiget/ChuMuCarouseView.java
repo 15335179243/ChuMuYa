@@ -32,7 +32,7 @@ import java.util.List;
  * @date: 2020年07月28日 14:09
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.5-beta
+ * @version: v11-2.0.6-beta
  */
 public class ChuMuCarouseView extends ViewFlipper {
 

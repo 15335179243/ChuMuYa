@@ -15,7 +15,7 @@ import java.lang.ref.WeakReference;
  * Copyright © 2020年 ChuMu. All rights reserved.
  * <p>
  * Describe: 侧滑返回
- * @version: v11-2.0.5-beta
+ * @version: v11-2.0.6-beta
  */
 public class SwipeBackListenerActivityAdapter implements SwipeBackLayout.SwipeListenerEx {
     private final WeakReference<Activity> mActivity;

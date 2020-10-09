@@ -20,23 +20,25 @@ import java.util.List;
  * Copyright © 2020年 ChuMu. All rights reserved.
  * <p>
  * Describe: 动态权限获取
- * @version: 2.0.2-bet
+ * @version: v11-2.0.6-beta
  * 开源库（https://github.com/permissions-dispatcher/PermissionsDispatcher 注解方式）
  * 开源库（https://github.com/tbruyelle/RxPermissions ）
  */
 public class ChuMuPermission {
 
     public static final int RequestCode_Permission = 100;
-
+    private static ChuMuPermission mChuMuPermission;
 
     public Activity mContext;
-    private ChuMuPermission mChuMuPermission;
 
+    private ChuMuPermission() {
+
+    }
     private ChuMuPermission(Activity context) {
         mContext = context;
     }
 
-    public ChuMuPermission getInstance(Activity context) {
+    public static ChuMuPermission getInstance(Activity context) {
         if (mChuMuPermission == null) {
             mChuMuPermission = new ChuMuPermission(context);
         }

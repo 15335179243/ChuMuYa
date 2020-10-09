@@ -20,7 +20,7 @@ import com.chumu.dt.v24.magicbox.swipeback.util.SwipeBackUtil;
  * Copyright © 2020年 ChuMu. All rights reserved.
  * <p>
  * Describe: 主要是用来侧滑返回的功能
- * @version: v11-2.0.5-beta
+ * @version: v11-2.0.6-beta
  */
 
 

@@ -24,7 +24,7 @@ import java.util.List;
  * @date: 2019年08月14日 14:32
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.5-beta
+ * @version: v11-2.0.6-beta
  */
 public class ChuMuPermissionTools {
     private final String TAG = "PermissionPageManager";

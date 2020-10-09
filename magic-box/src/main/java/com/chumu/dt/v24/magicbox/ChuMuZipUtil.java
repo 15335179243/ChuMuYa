@@ -13,7 +13,7 @@ import java.util.zip.ZipOutputStream;
  * @date: 2017年05月24日 18:21
  * @Copyright: 共有开源知识版权
  * @Company:
- * @version: v11-2.0.5-beta
+ * @version: v11-2.0.6-beta
  */
 
 public class ChuMuZipUtil {

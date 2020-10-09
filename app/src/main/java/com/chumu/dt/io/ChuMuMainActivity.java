@@ -10,6 +10,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.lifecycle.Observer;
@@ -26,11 +27,12 @@ import java.util.ArrayList;
 public class ChuMuMainActivity extends ChuMuBaseActivity {
 
     private IMyAidlInterface mIMyAidlInterface;
-
+Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         findViewById(R.id.bt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +45,7 @@ public class ChuMuMainActivity extends ChuMuBaseActivity {
 
             }
         });
+        btn.getParent().requestDisallowInterceptTouchEvent(true);
         ChuMuLiveDataBus.INSTANCE.with("2").observe(this, new Observer<Object>() {
             @Override
             public void onChanged(Object o) {
